@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale:1.0" />
+        <meta http-equiv="Content-Type" content="text/html" />
+        <title>Module 1 - Assignment</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div class="main-title">Module 1 - Assignment</div>
+        <div class="sub-title">Links</div>
+        <ul>
+            <li><a href="https://www.yahoo.com/" title="Yahoo" target="_blank">Yahoo</a></li>
+            <li><a href="https://www.google.com/" title="Google" target="_blank">Goolge</a></li>
+            <li><a href="https://www.cnn.com" title="CNN Digital" target="_blank">CNN Digital</a></li>
+        </ul>
+        <div class="sub-title">Company Information</div>
+        <h1>CNN Digital</h1>
+        <h2>CNN Digital is the world leader in online news and information and seeks to inform, engage and empower the world. Staffed 24 hours, seven days a week by a dedicated team in CNN bureaus around the world, CNN’s digital platforms deliver news from almost 4,000 journalists in every corner of the globe.</h2>
+        <h3>One CNN Center, Atlanta, GA 30303</h3>
+        <h4>
+            Phone: (404) 878-2276
+            Fax: (404) 827-1995
+        </h4>
+        <h5>Email: copyrightagent@turner.com</h5>
+        <h6>Cable News Network. A Warner Bros. Discovery Company. All Rights Reserved.</h6>
+
+        <div class="sub-title">Displaying Employee Informations</div>
+        <table border="2" width="100%">
+            <caption>Employee Information</caption>
+            <thead>
+                <tr>
+                    <th>Employee Id</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Designation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>James</td>
+                    <td>Finanace</td>
+                    <td>Chief Financial Officer</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Robert</td>
+                    <td>Finanace</td>
+                    <td>Vice President of Finance</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Michael</td>
+                    <td>Finanace</td>
+                    <td>Finance Director</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>William</td>
+                    <td>Finanace</td>
+                    <td>Finance Manager</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Thomas</td>
+                    <td>Finanace</td>
+                    <td>Finance Assistant</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>George</td>
+                    <td>Admin</td>
+                    <td>Chief Admin Officer</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Andrew</td>
+                    <td>Admin</td>
+                    <td>Vice President of Admin</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Donald</td>
+                    <td>Admin</td>
+                    <td>Admin Director</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Mark</td>
+                    <td>Admin</td>
+                    <td>Admin Manager</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Anthony</td>
+                    <td>Admin</td>
+                    <td>Admin Assistant</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="sub-title">Countries List</div>
+        <ul>
+            <li>Afghanistan</li>
+            <li>Albania</li>
+            <li>Australia</li>
+            <li>Canada</li>
+            <li>Denmark</li>
+            <li>Egypt</li>
+            <li>France</li>
+            <li>Germany</li>
+            <li>Georgia</li>
+            <li>Iceland</li>
+            <li>India</li>
+            <li>Iran</li>
+            <li>Ireland</li>
+            <li>Italy</li>
+            <ul>United Kingdom</ul>
+        </ul>
+
+        <div class="sub-title">Display edureka website</div>
+        <p>Edureka is an online training provider with the most effective learning system in the world. We help professionals learn trending technologies for career growth.</p>
+        <p>Please <a href="javascript:void(0)" onClick="displayWebsite()">click here</a> to visit more about edureka</p>
+        <iframe id="websiteid" height="200" width="100%" title="Edureka" style="display: none"></iframe>
+
+        <script>          
+            function displayWebsite()
+            {
+                document.getElementById('websiteid').src = "https://www.edureka.co/";
+                document.getElementById('websiteid').style.display = 'block';
+            }
+        </script>
+    </body>
+</html>

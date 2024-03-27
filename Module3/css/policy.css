@@ -1,0 +1,23 @@
+
+table {
+    border-color: green;
+    border-width: 5px;
+}
+table caption {
+    font-size: 2rem;
+}
+
+table .amount {
+    text-align: right;
+}
+
+table thead.table-head {
+    background: #292929;
+    color: #ffffff;
+}
+
+table th,td {
+    padding: .75rem .5rem; 
+    border-color: green;
+    border-width: 2px;
+}

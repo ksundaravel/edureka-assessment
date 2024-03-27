@@ -1,0 +1,32 @@
+p {
+    color: #202A44;
+    font-size: 20px;  
+    padding: 1rem;
+    border-width: 2px;
+    border-color: #202A44;
+}
+
+
+p.style-1 {
+   border-style: solid;
+}
+
+p.style-2 {
+    border-style: dotted;
+}
+
+p.style-3 {
+    border-style: dashed;
+}
+
+p.style-4 {
+    border-style: double;
+}
+
+p.style-5 {
+    border-style: groove;
+}
+
+p.style-6 {
+    border-style: ridge;
+}

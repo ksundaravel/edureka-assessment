@@ -1,0 +1,22 @@
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+
+.main-title {
+    color:  #a52a2a;
+    text-align: center;
+}
+.back-link {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+.back-link a{
+    font-size: 1.5rem; 
+}

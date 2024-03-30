@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html" />
+    <meta name="keywords" content="HTML,css,javascript" />
+    <meta name="description" content="This is module 4 assignments" />
+    <meta name="author" content="Sundaravel" />
+    <title>Module 5 Assignments</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="main-title">Module 5 Assignments</h1>
+
+        <div class="back-link">
+            <a href="index.html">
+                << Go to Main </a>
+        </div>
+
+        <h2>Employee Information</h2>
+        <div class="empInfo">
+            <p><span id="empname"></span> is working in <span id="empdepartment"></span> department.
+            </p>
+        </div>
+        <button class="button" id="employeeInfo">Display Employee info</button>
+
+    </div>
+    <script>
+
+        var employeeButton = document.querySelector("#employeeInfo");
+        var employee = {
+            employeeName: "Sundar",
+            employeeNo: "123",
+            employeeAge: "35",
+            employeeDepartment: "Finance",
+        };
+
+        document.querySelector(".empInfo #empname").innerHTML = employee.employeeName;
+        document.querySelector(".empInfo #empdepartment").innerHTML =
+            employee.employeeDepartment;
+
+        employeeButton.addEventListener("click", (e) => {
+            alert(
+                `${employee.employeeName} is working in  ${employee.employeeDepartment}  department.`
+            );
+        });    
+    </script>
+</body>
+
+</html>

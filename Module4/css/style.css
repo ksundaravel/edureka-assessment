@@ -1,0 +1,164 @@
+/* Module 4 styles */
+
+@font-face {
+  font-family: "My Ananda Black";
+  src: url("../fonts/AnandaBlackPersonalUseRegular-rg9Rx.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "My Destiny Signature";
+  src: url("../fonts/DestinySignature-jEdp0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "My Typographica";
+  src: url("../fonts/Typographica-Blp5.ttf") format("truetype");
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.main-title {
+  color: #a52a2a;
+  text-align: center;
+}
+
+.sub-title {
+  color: #a52a2a;
+}
+
+.shadow-effect {
+  text-shadow: 1px 1px 5px red;
+}
+
+.shadow-multi-effect {
+  text-shadow: 2px 2px 5px blue, 4px 4px 4px red;
+}
+
+.myname {
+  font-family: "My Ananda Black", "My Destiny Signature", "My Typographica",
+    sans-serif;
+  font-size: 1.5rem;
+}
+
+.myaddress {
+  font-family: "My Destiny Signature", "My Ananda Black", "My Typographica",
+    sans-serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.mycontact {
+  font-family: "My Typographica", "My Destiny Signature", "My Ananda Black",
+    sans-serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.image-group-2d img,
+.image-group-3d img {
+  padding: 15px;
+  margin-bottom: 5rem;
+  margin-top: 2rem;
+}
+
+.image-group-2d .image1,
+.image-group-2d .image3,
+.image-group-2d .image4 {
+  transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+}
+
+.image-group-2d .image2,
+.image-group-2d .image5 {
+  transform: rotate(60deg);
+  -webkit-transform: rotate(60deg);
+  -moz-transform: rotate(60deg);
+  -o-transform: rotate(60deg);
+  -ms-transform: rotate(60deg);
+}
+
+.image-group-3d .image1 {
+  transform: rotateX(180deg);
+  -webkit-transform: rotateX(180deg);
+  -moz-transform: rotateX(180deg);
+  -o-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+}
+
+.image-group-3d .image2 {
+  transform: rotateY(30deg);
+  -webkit-transform: rotateY(30deg);
+  -moz-transform: rotateY(30deg);
+  -o-transform: rotateY(30deg);
+  -ms-transform: rotateY(30deg);
+}
+
+.image-group-3d .image3 {
+  transform: rotateZ(90deg);
+  -webkit-transform: rotateZ(90deg);
+  -moz-transform: rotateZ(90deg);
+  -o-transform: rotateZ(90deg);
+  -ms-transform: rotateZ(90deg);
+}
+
+.col-group-01,
+.col-group-02
+ {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.col-group-01 .col {  
+  width: 40px;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.col-group-01 .col-1 {
+    background: red;
+    color: #fff;
+}
+
+.col-group-01 .col-2 {
+    background: green;
+    color: #fff;
+}
+
+.col-group-01 .col-3 {
+    background: cyan;
+    color: #000;
+}
+
+.col-group-01 .col-4 {
+    background: yellow;
+    color: #000;
+}
+
+.col-group-01 .col-1 {
+    background: red;
+    color: #fff;
+}
+
+
+.col-group-02 .col {  
+    width: 20%;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }

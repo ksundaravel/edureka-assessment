@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html" />
+    <meta name="keywords" content="HTML,css,javascript" />
+    <meta name="description" content="This is module 4 assignments" />
+    <meta name="author" content="Sundaravel" />
+    <title>Module 5 Assignments</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="main-title">Module 5 Assignments</h1>
+        <div class="back-link">
+            <a href="index.html">
+                << Go to Main </a>
+        </div>
+        <h2> Please see the output</h2>
+        <div> please find the max number from 10, 25, 15 is <b><span id="output1"></span></b></div>
+        <div> please find the max number from 100, 25, 15 is <b><span id="output2"></span></b></div>
+        <div> please find the max number from 100, 25, 150 is <b><span id="output3"></span></b></div>
+    </div>
+    <script>
+
+
+        function maxNumber(a, b, c) {
+            let max = a;
+            if (b > max) {
+                max = b;
+            }
+
+            if (c > max) {
+                max = c;
+            }
+            return max;
+        }
+
+        let max1 = maxNumber(10, 25, 15);
+        document.getElementById("output1").innerHTML = max1;
+        console.log(max1);
+
+        let max2 = maxNumber(100, 25, 15);
+        document.getElementById("output2").innerHTML = max2;
+        console.log(max2);
+
+        let max3 = maxNumber(100, 25, 150);
+        document.getElementById("output3").innerHTML = max3;
+        console.log(max3);
+
+
+
+    </script>
+</body>
+
+</html>

@@ -2,7 +2,10 @@
     --green: #8dc63f;
     --orange: #f3793e;
 }
-
+main {
+    position: relative;
+    margin-top: 50px;
+}
 .my-navbar .navbar-brand {
     padding: 5px 15px;
 }
@@ -62,5 +65,18 @@
     color: #000;
 } 
 
+
+/* Icons List */
+
+.icons-list i {
+    font-size: 3rem;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+
+.icons-list i:first-child {
+    margin-left: 0;
+}
 
 

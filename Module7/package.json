@@ -1,0 +1,22 @@
+{
+  "name": "module7",
+  "version": "1.0.0",
+  "description": "Module 7 assessment",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:sass": "sass --watch custom_scss/custom.scss:assets/css/customized_bootstrap.css"
+  },
+  "keywords": [
+    "bootstrap",
+    "sass"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  },
+  "devDependencies": {
+    "sass": "^1.72.0"
+  }
+}

@@ -1,0 +1,16 @@
+$primary: #0c5397;
+$secondary: #f76b1c;
+$grey: #4a4a4a;
+$accent1: #248de4;
+$accent2: #f5a623;
+$accent2a:#fea101;
+
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/variables';
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+@import "./fonts";
+@import "./base";
+@import "./nav";
+

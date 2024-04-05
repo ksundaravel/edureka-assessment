@@ -1,0 +1,22 @@
+.our-clients {
+    padding: 40px 0;
+  .client-list {
+    display: flex;
+    align-items: center;
+    .content-title {
+    }
+    .logo-list {
+        width: 100%;
+        text-align: center;
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+          display: inline-block;
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+}

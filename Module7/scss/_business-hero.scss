@@ -1,0 +1,39 @@
+.business-hero {
+  .card {
+    border-radius: 0;
+    .card-body {
+      padding: 1.25rem 0;
+      .card-tag {
+        font-size: 36px;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        small {
+          font-size: 20px;
+          font-weight: 400;
+        }
+      }
+      .card-title {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+      .card-subtitle {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.43;
+      }
+    }
+    .card-footer{
+        text-align: center;
+        button {
+            width: 170px;
+            border: 0;
+            border-radius: 2px;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: $white;
+            color: $primary;
+        }
+    }
+  }
+}

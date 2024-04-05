@@ -5,5 +5,9 @@ body {
   font-size: 0.875rem;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
-  color: $grey
+  color: $grey;
+  a,
+  .btn-link {
+    font-size: 0.875rem;
+  }
 }

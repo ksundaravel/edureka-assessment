@@ -1,0 +1,138 @@
+.courses {
+  h2 {
+    margin: 20px 0 10px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #404040;
+  }
+  .col-courses {
+    margin-bottom: 2rem;
+  }
+  .edu-navbar-training {
+    width: 100%;
+    padding: .75rem 0 1.5rem 0;
+    .nav-training {
+      width: 100%;
+    }
+    ul.navbar-nav {
+      li {
+        &.dropdown {
+          float: right;
+          margin-left: auto;
+          .dropdown-toggle::after {
+            content: none;
+          }
+        }
+        &.nav-item {
+          margin-right: 1.125rem;
+          .nav-link {
+            font-size: 17px;
+            font-weight: 500;
+            text-align: center;
+            white-space: nowrap;
+            color: #757575;
+            padding: 5px 10px;
+            background: transparent;
+            &.active {
+              font-weight: 600;
+              font-size: 18px;
+              color: #404040;
+              border-bottom: 5px solid #0f4e91;
+            }
+          }
+        }
+      }
+    }
+  }
+  .course-list {
+    .card {
+      height: 100%;
+      border: 0;
+      border-radius: 0;
+      box-shadow: 9px 6px 22px 0 rgba(0, 0, 0, 0.08);
+      .card-header {
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        padding: 1.25rem 1rem;
+        .course-photo {
+          flex: 0 0 auto;
+          width: 20%;
+          i {
+            color: $white;
+            font-size: 2.5rem;
+          }
+        }
+        .course-name {
+          flex: 0 0 auto;
+          width: 80%;
+          padding-left: 0.75rem;
+          text-transform: uppercase;
+          color: $white;
+          font-size: 16px;
+          line-height: 20px;
+          font-weight: bold;
+        }
+        &.bg-01 {
+          background: linear-gradient(240deg, #426a9f, #4edbec);
+        }
+        &.bg-02 {
+          background: linear-gradient(242deg, #f49cae, #b05ce2);
+        }
+        &.bg-03 {
+          background: linear-gradient(240deg, #bdd377, #09adef);
+        }
+        &.bg-04 {
+          background: linear-gradient(240deg, #73db9d, #fcb279);
+        }
+        &.bg-05 {
+          background: linear-gradient(240deg, #e59f39, #d475c5);
+        }
+        &.bg-06 {
+          background: linear-gradient(240deg, #e59f39, #d475c5);
+        }
+        &.bg-07 {
+          background: linear-gradient(240deg, #ff9fb2, #de51e3);
+        }
+        &.bg-08 {
+          background: linear-gradient(242deg, #eca1b0, #9922df);
+        }
+      }
+      .card-body {
+        .card-title {
+          align-items: center;
+          color: #4a4a4a;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 24px;
+          margin-bottom: 1.5rem;
+        }
+        .card-subtitle {
+          font-size: 10px;
+          font-weight: 400;
+          font-style: italic;
+          color: #9b9b9b;
+          margin-bottom: 6px;
+        }
+        .card-rating {
+          font-size: 16px;
+          margin-bottom: 0.75rem;
+          i.fa-star,
+          i.fa-star-half-o {
+            color: #ffc700;
+            &.disabled {
+              color: #f0f0f0;
+            }
+          }
+          span {
+            font-size: 14px;
+            font-weight: 600;
+            color: #4a4a4a;
+          }
+        }
+      }
+    }
+  }
+}

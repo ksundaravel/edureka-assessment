@@ -3,9 +3,13 @@
   padding: 40px 0;
   .strip-container {
     display: flex;
+    flex-wrap: wrap;
     .strip-content {
       flex: 0 0 auto;
       width: 75%;
+      @include media-breakpoint-down(lg) {
+        width: 100%;
+      }
       font-size: 18px;
       font-weight: bold;
       color: $white;
@@ -13,7 +17,11 @@
     }
     .strip-button {
       flex: 0 0 auto;
-      width: 25%;
+      width: 25%; 
+      text-align: center;     
+      @include media-breakpoint-down(lg) {
+        width: 100%;
+      }
       button {
         width: 240px;
         border: 0;

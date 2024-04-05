@@ -4,10 +4,14 @@ header {
     .container-fluid {
       padding-left: 40px;
       padding-right: 40px;
+      @include media-breakpoint-down(lg) {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
     }
     &.edu-navbar {
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-      background-image: linear-gradient(to left, $accent1, $primary);
+      background-image: linear-gradient(to left, $accent1, $primary);     
       .navbar-brand {
         img {
           width: 129px;

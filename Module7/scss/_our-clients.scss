@@ -1,13 +1,24 @@
 .our-clients {
-    padding: 40px 0;
+  padding: 40px 0;
   .client-list {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     .content-title {
+      font-weight: 400;
+      width: 15%;
+      padding: .75rem 0;     
+      @include media-breakpoint-down(lg) {
+        text-align: center;
+        width: 100%;
+      }
     }
     .logo-list {
+      width: 85%;
+      @include media-breakpoint-down(lg) {
         width: 100%;
-        text-align: center;
+      }
+      text-align: center;
       ul {
         list-style: none;
         margin: 0;
@@ -15,6 +26,11 @@
         li {
           display: inline-block;
           padding: 0 10px;
+          img {
+            @include media-breakpoint-down(lg) {
+              padding: .75rem 0;
+            }
+          }
         }
       }
     }

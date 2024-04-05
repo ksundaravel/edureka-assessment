@@ -40,6 +40,10 @@ footer {
             display: block;
             img {
               width: 100%;
+              @include media-breakpoint-down(lg) {
+                width: 130px;
+                height: 39px;
+              }
             }
           }
         }
@@ -64,6 +68,12 @@ footer {
       .icons-list {
         display: inline-block;
         width: auto;
+        padding: .75rem 0;
+        @include media-breakpoint-down(lg) {
+          padding: .75rem 1rem;
+          width: 100%;
+          text-align: center;
+        }
       }
       ul {
         li {
@@ -94,41 +104,51 @@ footer {
     color: #4a4a4a;
     padding: 25px 0;
     border-top: 1px solid #d7d7d7;
-	margin-bottom: 41px;
-	text-align: center;
+    margin-bottom: 41px;
+    text-align: center;
   }
   .tertiary-footer {
     background: $black;
     color: $white;
     padding: 10px 0;
-	font-size: 17px;
-	font-weight: 600;
-	a {
-		font-size: 17px;
-		color: $white;
-		text-decoration: none;
-		margin-right: 1.5rem;
-	}
-	img.flag {
-		margin-left: .75rem;
-	}
+    font-size: 17px;
+    font-weight: 600;
+    @include media-breakpoint-down(lg) {
+      text-align: center;
+    }
+    a {
+      font-size: 17px;
+      color: $white;
+      text-decoration: none;
+      margin-right: 1.5rem;
+      @include media-breakpoint-down(lg) {
+        display: block;
+        text-align: center;
+      }
+    }
+    img.flag {
+      margin-left: 0.75rem;
+    }
   }
   .drop-query {
-	position: fixed;
-	width: 280px;
-	right: 0;
-	bottom: 0;	
-	z-index: 1100;
-	.query-title {
-		font-size: 1rem;
-		font-weight: 700;
-		background: #ed593e;
-		color: $white;
-		padding: 10.5px 15px;
-		box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.14);
-		span {
-			float: right;
-		}
-	}
+    position: fixed;
+    width: 280px;
+    right: 0;
+    bottom: 0;
+    z-index: 1100;
+    .query-title {
+      font-size: 1rem;
+      font-weight: 700;
+      background: #ed593e;
+      color: $white;
+      padding: 10.5px 15px;
+      box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.14);
+      span {
+        float: right;
+      }
+    }
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
   }
 }

@@ -1,0 +1,22 @@
+.counter {
+  display: inline-block;
+  margin-left: 15px;
+  border-left: 1px solid #fff;
+  .offer-text {
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+	padding: 0 .75rem 0 1rem;
+  }
+  #offer-timer {
+    padding: 0 0.5rem;
+    .countdown-amount {
+      padding: 0.1rem 0.25rem;
+      background: #ec9704;
+    }
+    .countdown-period {
+      padding: 0 0.25rem;
+    }
+  }
+}

@@ -2,287 +2,300 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Edu Website</title>
-    <link rel="stylesheet" href="css/font-awesome.css" />
-    <link rel="stylesheet" href="css/style.css" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Edu Website</title>
+	<link rel="stylesheet" href="css/font-awesome.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="styleshhet" href="css/jquery.countdown.css" />
 
 </head>
 
 <body>
-    <header class="fixed-top">
-        <div class="notification-banner">Career Level-Up Offer - Upto 30% Off </div>
-        <nav class="navbar navbar-expand-lg bg-primary edu-navbar">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="images/Edureka-logo.webp" alt="Brand Logo"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#eduNavbar"
-                    aria-controls="eduNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="eduNavbar">
-                    <div class="nav-left">
-                        <form class="search d-flex" role="search">
-                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-secondary" type="submit"><i class="fa fa-search"
-                                    aria-hidden="true"></i></button>
-                        </form>
-                    </div>
-                    <div class="nav-right">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Corporate Training</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Courses</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Blog</a>
-                            </li>
-                            <li class="nav-item border-left text-blur">
-                                <a class="nav-link" href="#">Login</a>
-                            </li>
-                            <li class="nav-item text-blur sign-up">
-                                <a class="nav-link" href="#">Sign Up</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <nav class="navbar navbar-expand-lg edu-main-navbar">
-        <div class="container-fluid">
-            <div class="btn-group edu-dropdown">
-                <button type="button" class="btn btn-link dropdown-toggle" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    <small>Browse</small>
-                    Courses
-                </button>
-                <ul class="dropdown-menu dropdown-menu-md-start">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Project Management and Methodologies</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">HigherEd</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Artificial Intelligence</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Big Data</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Software Testing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Frontend Development</a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a class="nav-link" href="#">Databases</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Robotic Process Automation</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Data Warehousing and ETL</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Mobile Development</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Operating Systems</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Architecture &amp; Design Patterns</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Blockchain</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Digital Marketing</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="collapse navbar-collapse" id="eduMainNavbar">
-                <div class="nav-main ">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Cloud Computing</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">DevOps</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Cyber Security</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">BI and Visulaization</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Programming and Frameworks</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Data Science</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                <i class="fa fa-bars" aria-hidden="true"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-md-end">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Project Management and Methodologies</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">HigherEd</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Artificial Intelligence</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Big Data</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Software Testing</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Frontend Development</a>
-                                </li>
-                                <li class="nav-item  ">
-                                    <a class="nav-link" href="#">Databases</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Robotic Process Automation</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Data Warehousing and ETL</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Mobile Development</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Operating Systems</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Architecture &amp; Design Patterns</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Blockchain</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Digital Marketing</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <main>
-        <section id="hero-carousel" class="carousel slide">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="images/hero-carousel-1.jpg" class="d-block w-100" alt="Hero carouse 1">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/hero-carousel-2.jpg" class="d-block w-100" alt="Hero carouse 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/hero-carousel-3.jpg" class="d-block w-100" alt="Hero carouse 3">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </section>
-        <section class="slider-cards">
-            <div class="container">
-                <div class="row slider-card-list">
-                    <div class="col-md-4 col-slider">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="card-content">
-                                    <div class="card-title">Become A <span>DevOps Engineer</span></div>
-                                    <div class="card-link">Know More <i class="fa fa-chevron-right"
-                                            aria-hidden="true"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-slider">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="card-content">
-                                    <div class="card-title">Become A <span>Cloude Architect</span></div>
-                                    <div class="card-link">Know More <i class="fa fa-chevron-right"
-                                            aria-hidden="true"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-slider">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="card-content">
-                                    <div class="card-title">Become A <span>Data Scientist</span></div>
-                                    <div class="card-link">Know More <i class="fa fa-chevron-right"
-                                            aria-hidden="true"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="courses">
-            <div class="container">
-                <h2>Trending Courses</h2>
-                <nav class="navbar navbar-expand-lg edu-navbar-training">
-                    <div class="collapse navbar-collapse" id="eduNavbarTraining">
-                        <div class="nav-training">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">All</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#">Cloud Computing</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">DevOps</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Cyber Security</a>
-                                </li>
-                                <li class="nav-item border-left text-blur">
-                                    <a class="nav-link" href="#">BI and Visualization</a>
-                                </li>
-                                <li class="nav-item border-left text-blur">
-                                    <a class="nav-link" href="#">Programming & Frameworks</a>
-                                </li>
-                                <li class="nav-item border-left text-blur">
-                                    <a class="nav-link" href="#">Data Science</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        <i class="fa fa-bars" aria-hidden="true"></i>
-                                    </a>
-                                    <!-- <ul class="dropdown-menu">
+	<!-- Header start -->
+	<header class="fixed-top">
+		<div class="notification-banner">
+			Career Level-Up Offer - Upto 30% Off
+			<div class="counter"><span class="offer-text">OFFER ENDING IN : </span><span id="offer-timer"></span></div>
+		</div>
+		<nav class="navbar navbar-expand-lg bg-primary edu-navbar">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#"><img src="images/Edureka-logo.webp" alt="Brand Logo"></a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#eduNavbar"
+					aria-controls="eduNavbar" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="eduNavbar">
+					<div class="nav-left">
+						<form class="search d-flex" role="search">
+							<input class="form-control" type="search" placeholder="Search" aria-label="Search">
+							<button class="btn btn-secondary" type="submit"><i class="fa fa-search"
+									aria-hidden="true"></i></button>
+						</form>
+					</div>
+					<div class="nav-right">
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="#">Corporate Training</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Courses</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Blog</a>
+							</li>
+							<li class="nav-item border-left text-blur">
+								<a class="nav-link" href="#">Login</a>
+							</li>
+							<li class="nav-item text-blur sign-up">
+								<a class="nav-link" href="#">Sign Up</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- Header end -->
+	<!-- Main nav start -->
+	<nav class="navbar navbar-expand-lg edu-main-navbar">
+		<div class="container-fluid">
+			<div class="btn-group edu-dropdown">
+				<button type="button" class="btn btn-link dropdown-toggle" data-bs-toggle="dropdown"
+					aria-expanded="false">
+					<small>Browse</small>
+					Courses
+				</button>
+				<ul class="dropdown-menu dropdown-menu-md-start">
+					<li class="nav-item">
+						<a class="nav-link" href="#">Project Management and Methodologies</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">HigherEd</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Artificial Intelligence</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Big Data</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Software Testing</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Frontend Development</a>
+					</li>
+					<li class="nav-item  ">
+						<a class="nav-link" href="#">Databases</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Robotic Process Automation</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Data Warehousing and ETL</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Mobile Development</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Operating Systems</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Architecture &amp; Design Patterns</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Blockchain</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Digital Marketing</a>
+					</li>
+				</ul>
+			</div>
+			<div class="collapse navbar-collapse" id="eduMainNavbar">
+				<div class="nav-main ">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="#">Cloud Computing</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">DevOps</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Cyber Security</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">BI and Visulaization</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Programming and Frameworks</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Data Science</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+								aria-expanded="false">
+								<i class="fa fa-bars" aria-hidden="true"></i>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-md-end">
+								<li class="nav-item">
+									<a class="nav-link" href="#">Project Management and Methodologies</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">HigherEd</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">Artificial Intelligence</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">Big Data</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">Software Testing</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">Frontend Development</a>
+								</li>
+								<li class="nav-item  ">
+									<a class="nav-link" href="#">Databases</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">Robotic Process Automation</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">Data Warehousing and ETL</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">Mobile Development</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">Operating Systems</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">Architecture &amp; Design Patterns</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">Blockchain</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">Digital Marketing</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- Main nav end -->
+	<main>
+		<!-- Hero Carousel start -->
+		<section id="hero-carousel" class="carousel slide">
+			<div class="carousel-indicators">
+				<button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active"
+					aria-current="true" aria-label="Slide 1"></button>
+				<button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1"
+					aria-label="Slide 2"></button>
+				<button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2"
+					aria-label="Slide 3"></button>
+			</div>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="images/hero-carousel-1.jpg" class="d-block w-100" alt="Hero carouse 1">
+				</div>
+				<div class="carousel-item">
+					<img src="images/hero-carousel-2.jpg" class="d-block w-100" alt="Hero carouse 2">
+				</div>
+				<div class="carousel-item">
+					<img src="images/hero-carousel-3.jpg" class="d-block w-100" alt="Hero carouse 3">
+				</div>
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</section>
+		<!-- Hero Carousel end -->
+		<!-- slider cards start -->
+		<section class="slider-cards">
+			<div class="container">
+				<div class="row slider-card-list">
+					<div class="col-md-4 col-slider">
+						<div class="card">
+							<div class="card-body">
+								<div class="card-content">
+									<div class="card-title">Become A <span>DevOps Engineer</span></div>
+									<div class="card-link">Know More <i class="fa fa-chevron-right"
+											aria-hidden="true"></i></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-slider">
+						<div class="card">
+							<div class="card-body">
+								<div class="card-content">
+									<div class="card-title">Become A <span>Cloude Architect</span></div>
+									<div class="card-link">Know More <i class="fa fa-chevron-right"
+											aria-hidden="true"></i></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-slider">
+						<div class="card">
+							<div class="card-body">
+								<div class="card-content">
+									<div class="card-title">Become A <span>Data Scientist</span></div>
+									<div class="card-link">Know More <i class="fa fa-chevron-right"
+											aria-hidden="true"></i></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- slider cards end -->
+		<!-- Trending courses start -->
+		<section class="courses">
+			<div class="container">
+				<h2>Trending Courses</h2>
+				<nav class="navbar navbar-expand-lg edu-navbar-training">
+					<div class="collapse navbar-collapse" id="eduNavbarTraining">
+						<div class="nav-training">
+							<ul class="navbar-nav">
+								<li class="nav-item">
+									<a class="nav-link active" aria-current="page" href="#">All</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" aria-current="page" href="#">Cloud Computing</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">DevOps</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">Cyber Security</a>
+								</li>
+								<li class="nav-item border-left text-blur">
+									<a class="nav-link" href="#">BI and Visualization</a>
+								</li>
+								<li class="nav-item border-left text-blur">
+									<a class="nav-link" href="#">Programming & Frameworks</a>
+								</li>
+								<li class="nav-item border-left text-blur">
+									<a class="nav-link" href="#">Data Science</a>
+								</li>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+										aria-expanded="false">
+										<i class="fa fa-bars" aria-hidden="true"></i>
+									</a>
+									<!-- <ul class="dropdown-menu">
                                         <li class="nav-item">
                                             <a class="nav-link" href="#">Project Management and Methodologies</a>
                                         </li>
@@ -326,771 +339,792 @@
                                             <a class="nav-link" href="#">Digital Marketing</a>
                                         </li>
                                     </ul> -->
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-                <div class="row course-list">
-                    <div class="col-md-3 col-courses">
-                        <div class="card">
-                            <div class="card-header bg-01">
-                                <div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
-                                <div class="course-name">AWS Certification Training Solutions Architect</div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">AWS Certification Training Solutions...</div>
-                                <div class="card-subtitle">Reviews</div>
-                                <div class="card-rating">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <span> 5</span><span> (35540)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-courses">
-                        <div class="card">
-                            <div class="card-header bg-02">
-                                <div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
-                                <div class="course-name">Advanced Program in Data Science and AI</div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">Advanced Certificate Program in Data...</div>
-                                <div class="card-subtitle">Reviews</div>
-                                <div class="card-rating">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star disabled" aria-hidden="true"></i>
-                                    <i class="fa fa-star disabled" aria-hidden="true"></i>
-                                    <span> 3</span><span> (27860)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-courses">
-                        <div class="card">
-                            <div class="card-header bg-03">
-                                <div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
-                                <div class="course-name">CISSP Certification Training Program Course</div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">CISSP Certification Training Program Course...</div>
-                                <div class="card-subtitle">Reviews</div>
-                                <div class="card-rating">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                                    <span> 4.5 </span><span> (25740)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-courses">
-                        <div class="card">
-                            <div class="card-header bg-04">
-                                <div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
-                                <div class="course-name">AWS Certification Training Solutions Architect</div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">AWS Certification Training Solutions...</div>
-                                <div class="card-subtitle">Reviews</div>
-                                <div class="card-rating">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star disabled" aria-hidden="true"></i>
-                                    <span> 4</span><span> (15370)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-courses">
-                        <div class="card">
-                            <div class="card-header bg-05">
-                                <div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
-                                <div class="course-name">AWS Certification Training Solutions Architect</div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">AWS Certification Training Solutions...</div>
-                                <div class="card-subtitle">Reviews</div>
-                                <div class="card-rating">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <span> 5</span><span> (35540)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-courses">
-                        <div class="card">
-                            <div class="card-header bg-06">
-                                <div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
-                                <div class="course-name">AWS Certification Training Solutions Architect</div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">AWS Certification Training Solutions...</div>
-                                <div class="card-subtitle">Reviews</div>
-                                <div class="card-rating">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <span> 5</span><span> (35540)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-courses">
-                        <div class="card">
-                            <div class="card-header bg-07">
-                                <div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
-                                <div class="course-name">AWS Certification Training Solutions Architect</div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">AWS Certification Training Solutions...</div>
-                                <div class="card-subtitle">Reviews</div>
-                                <div class="card-rating">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <span> 5</span><span> (35540)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-courses">
-                        <div class="card">
-                            <div class="card-header bg-08">
-                                <div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
-                                <div class="course-name">AWS Certification Training Solutions Architect</div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">AWS Certification Training Solutions...</div>
-                                <div class="card-subtitle">Reviews</div>
-                                <div class="card-rating">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <span> 5</span><span> (35540)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+				<div class="row course-list">
+					<div class="col-md-3 col-courses">
+						<div class="card">
+							<div class="card-header bg-01">
+								<div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
+								<div class="course-name">AWS Certification Training Solutions Architect</div>
+							</div>
+							<div class="card-body">
+								<div class="card-title">AWS Certification Training Solutions...</div>
+								<div class="card-subtitle">Reviews</div>
+								<div class="card-rating">
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<span> 5</span><span> (35540)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-courses">
+						<div class="card">
+							<div class="card-header bg-02">
+								<div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
+								<div class="course-name">Advanced Program in Data Science and AI</div>
+							</div>
+							<div class="card-body">
+								<div class="card-title">Advanced Certificate Program in Data...</div>
+								<div class="card-subtitle">Reviews</div>
+								<div class="card-rating">
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star disabled" aria-hidden="true"></i>
+									<i class="fa fa-star disabled" aria-hidden="true"></i>
+									<span> 3</span><span> (27860)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-courses">
+						<div class="card">
+							<div class="card-header bg-03">
+								<div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
+								<div class="course-name">CISSP Certification Training Program Course</div>
+							</div>
+							<div class="card-body">
+								<div class="card-title">CISSP Certification Training Program Course...</div>
+								<div class="card-subtitle">Reviews</div>
+								<div class="card-rating">
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									<span> 4.5 </span><span> (25740)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-courses">
+						<div class="card">
+							<div class="card-header bg-04">
+								<div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
+								<div class="course-name">AWS Certification Training Solutions Architect</div>
+							</div>
+							<div class="card-body">
+								<div class="card-title">AWS Certification Training Solutions...</div>
+								<div class="card-subtitle">Reviews</div>
+								<div class="card-rating">
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star disabled" aria-hidden="true"></i>
+									<span> 4</span><span> (15370)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-courses">
+						<div class="card">
+							<div class="card-header bg-05">
+								<div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
+								<div class="course-name">AWS Certification Training Solutions Architect</div>
+							</div>
+							<div class="card-body">
+								<div class="card-title">AWS Certification Training Solutions...</div>
+								<div class="card-subtitle">Reviews</div>
+								<div class="card-rating">
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<span> 5</span><span> (35540)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-courses">
+						<div class="card">
+							<div class="card-header bg-06">
+								<div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
+								<div class="course-name">AWS Certification Training Solutions Architect</div>
+							</div>
+							<div class="card-body">
+								<div class="card-title">AWS Certification Training Solutions...</div>
+								<div class="card-subtitle">Reviews</div>
+								<div class="card-rating">
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<span> 5</span><span> (35540)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-courses">
+						<div class="card">
+							<div class="card-header bg-07">
+								<div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
+								<div class="course-name">AWS Certification Training Solutions Architect</div>
+							</div>
+							<div class="card-body">
+								<div class="card-title">AWS Certification Training Solutions...</div>
+								<div class="card-subtitle">Reviews</div>
+								<div class="card-rating">
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<span> 5</span><span> (35540)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-courses">
+						<div class="card">
+							<div class="card-header bg-08">
+								<div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
+								<div class="course-name">AWS Certification Training Solutions Architect</div>
+							</div>
+							<div class="card-body">
+								<div class="card-title">AWS Certification Training Solutions...</div>
+								<div class="card-subtitle">Reviews</div>
+								<div class="card-rating">
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<span> 5</span><span> (35540)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Trending courses end -->
+		<!-- Career Related courses start -->
+		<section class="courses">
+			<div class="container">
+				<h2>Career Related Programs</h2>
+				<div class="row course-list">
+					<div class="col-md-4 col-courses">
+						<div class="card">
+							<div class="card-header bg-01">
+								<div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
+								<div class="course-name">AWS Certification Training Solutions Architect</div>
+							</div>
+							<div class="card-body">
+								<div class="card-title">AWS Certification Training Solutions...</div>
+								<div class="card-subtitle">Reviews</div>
+								<div class="card-rating">
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<span> 5</span><span> (35540)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-courses">
+						<div class="card">
+							<div class="card-header bg-02">
+								<div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
+								<div class="course-name">Advanced Program in Data Science and AI</div>
+							</div>
+							<div class="card-body">
+								<div class="card-title">Advanced Certificate Program in Data...</div>
+								<div class="card-subtitle">Reviews</div>
+								<div class="card-rating">
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star disabled" aria-hidden="true"></i>
+									<i class="fa fa-star disabled" aria-hidden="true"></i>
+									<span> 3</span><span> (27860)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-courses">
+						<div class="card">
+							<div class="card-header bg-03">
+								<div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
+								<div class="course-name">CISSP Certification Training Program Course</div>
+							</div>
+							<div class="card-body">
+								<div class="card-title">CISSP Certification Training Program Course...</div>
+								<div class="card-subtitle">Reviews</div>
+								<div class="card-rating">
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									<span> 4.5 </span><span> (25740)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Career Related courses end -->
+		<!-- Recent Additions courses start -->
+		<section class="courses">
+			<div class="container">
+				<h2>Recent Additions</h2>
+				<div class="row course-list">
+					<div class="col-md-3 col-courses">
+						<div class="card">
+							<div class="card-header bg-01">
+								<div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
+								<div class="course-name">AWS Certification Training Solutions Architect</div>
+							</div>
+							<div class="card-body">
+								<div class="card-title">AWS Certification Training Solutions...</div>
+								<div class="card-subtitle">Reviews</div>
+								<div class="card-rating">
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<span> 5</span><span> (35540)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-courses">
+						<div class="card">
+							<div class="card-header bg-02">
+								<div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
+								<div class="course-name">Advanced Program in Data Science and AI</div>
+							</div>
+							<div class="card-body">
+								<div class="card-title">Advanced Certificate Program in Data...</div>
+								<div class="card-subtitle">Reviews</div>
+								<div class="card-rating">
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star disabled" aria-hidden="true"></i>
+									<i class="fa fa-star disabled" aria-hidden="true"></i>
+									<span> 3</span><span> (27860)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-courses">
+						<div class="card">
+							<div class="card-header bg-02">
+								<div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
+								<div class="course-name">CISSP Certification Training Program Course</div>
+							</div>
+							<div class="card-body">
+								<div class="card-title">CISSP Certification Training Program Course...</div>
+								<div class="card-subtitle">Reviews</div>
+								<div class="card-rating">
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star-half-o" aria-hidden="true"></i>
+									<span> 4.5 </span><span> (25740)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-courses">
+						<div class="card">
+							<div class="card-header bg-02">
+								<div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
+								<div class="course-name">AWS Certification Training Solutions Architect</div>
+							</div>
+							<div class="card-body">
+								<div class="card-title">AWS Certification Training Solutions...</div>
+								<div class="card-subtitle">Reviews</div>
+								<div class="card-rating">
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star disabled" aria-hidden="true"></i>
+									<span> 4</span><span> (15370)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Recent Additions courses end -->
+		<!-- categories start -->
+		<section class="categories">
+			<div class="container">
+				<h2>Discover Top Categories</h2>
+				<div class="row category-list">
+					<div class="col-md-2 col-category">
+						<div class="card">
+							<div class="card-header">
+								<!-- <img src="images/cloud.png" class="card-img-top" alt="Category Images"> -->
+								<i class="fa fa-cloud icon-1" aria-hidden="true"></i>
+							</div>
+							<div class="card-body">
+								<div class="card-title">Cloud Computing</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2 col-category">
+						<div class="card">
+							<div class="card-header">
+								<i class="fa fa-cloud icon-2" aria-hidden="true"></i>
+							</div>
+							<div class="card-body">
+								<div class="card-title">DevOps</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2 col-category">
+						<div class="card">
+							<div class="card-header">
+								<!-- <img src="images/cloud.png" class="card-img-top" alt="Category Images"> -->
+								<i class="fa fa-cloud icon-3" aria-hidden="true"></i>
+							</div>
+							<div class="card-body">
+								<div class="card-title">Cyber Security</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2 col-category">
+						<div class="card">
+							<div class="card-header">
+								<!-- <img src="images/cloud.png" class="card-img-top" alt="Category Images"> -->
+								<i class="fa fa-cloud icon-4" aria-hidden="true"></i>
+							</div>
+							<div class="card-body">
+								<div class="card-title">BI and Visualization</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2 col-category">
+						<div class="card">
+							<div class="card-header">
+								<!-- <img src="images/cloud.png" class="card-img-top" alt="Category Images"> -->
+								<i class="fa fa-cloud icon-5" aria-hidden="true"></i>
+							</div>
+							<div class="card-body">
+								<div class="card-title">Programming & Frameworks</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2 col-category">
+						<div class="card">
+							<div class="card-header">
+								<!-- <img src="images/cloud.png" class="card-img-top" alt="Category Images"> -->
+								<i class="fa fa-cloud icon-6" aria-hidden="true"></i>
+							</div>
+							<div class="card-body">
+								<div class="card-title">Data Science</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row view-all">
+					<div class="col-12 col-container">
+						<a class="view-all-reviews" href="#">VIEW MORE <i class="fa fa-chevron-right"
+								aria-hidden="true"></i></a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- categories end -->
+		<!-- review start -->
+		<section class="review">
+			<div class="container">
+				<h2>Reviews</h2>
+				<div class="row review-list">
+					<div class="col-md-4 col-review">
+						<div class="card">
+							<div class="card-header">
+								<div class="reviewer-photo"><img src="images/male-circle.png" /></div>
+								<div class="reviewer-details">
+									<div class="reviewer-name">Ashley Jessica <i class="fa fa-linkedin-square"
+											aria-hidden="true"></i></div>
+									<div class="reviewer-title">Founder</div>
+								</div>
+							</div>
+							<div class="card-body">
+								<div class="card-title">Human-Computer Interaction (HCI) for...</div>
+								<div class="card-rating">
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star-o" aria-hidden="true"></i>
+								</div>
+								<div class="card-text">
+									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+										Ipsum has been the industry's... <a href="#">Read More</a> </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-review">
+						<div class="card">
+							<div class="card-header">
+								<div class="reviewer-photo"><img src="images/male-circle.png" /></div>
+								<div class="reviewer-details">
+									<div class="reviewer-name">Michael Jacob <i class="fa fa-linkedin-square"
+											aria-hidden="true"></i></div>
+									<div class="reviewer-title">Fullstack Development Manager</div>
+								</div>
+							</div>
+							<div class="card-body">
+								<div class="card-title">DevOps Certification Training Course...</div>
+								<div class="card-rating">
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star-o" aria-hidden="true"></i>
+									<i class="fa fa-star-o" aria-hidden="true"></i>
+								</div>
+								<div class="card-text">
+									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+										Ipsum has been the industry's... <a href="#">Read More</a> </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-review">
+						<div class="card">
+							<div class="card-header">
+								<div class="reviewer-photo"><img src="images/female-circle.png" /></div>
+								<div class="reviewer-details">
+									<div class="reviewer-name">Madison Emily <i class="fa fa-linkedin-square"
+											aria-hidden="true"></i></div>
+									<div class="reviewer-title">Project Manager</div>
+								</div>
+							</div>
+							<div class="card-body">
+								<div class="card-title">React.js Training Course With...</div>
+								<div class="card-rating">
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+								</div>
+								<div class="card-text">
+									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+										Ipsum has been the industry's... <a href="#">Read More</a> </p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row view-all">
+					<div class="col-12 col-container">
+						<a class="view-all-reviews" href="#">VIEW ALL REVIEWS <i class="fa fa-chevron-right"
+								aria-hidden="true"></i></a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- review end -->
+		<!-- hero-strip start -->
+		<section class="hero-strip">
+			<div class="container">
+				<div class="strip-container">
+					<div class="strip-content">
+						<p>Enroll, Learn, Grow, Repeat! Get ready to achieve your learning goals
+							with Edureka</p>
+					</div>
+					<div class="strip-button">
+						<button class="btn btn-primary" type="button">View All Courses</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- hero-strip end -->
+		<!-- business-hero start -->
+		<section class="business-hero">
+			<div class="card text-bg-dark">
+				<img src="images/bg/edureka-business.png" class="card-img" alt="Business Image">
+				<div class="card-img-overlay">
+					<div class="container">
+						<div class="card-body">
+							<div class="card-tag">edureka! <small>for Business</small></div>
+							<div class="card-title">No more dull edges in your company. Make your employees into
+								masters.
+							</div>
+							<div class="card-subtitle">Nurture talent with instructor-led courses on trending
+								technologies
+							</div>
+						</div>
+						<div class="card-footer"><button class="btn btn-primary" type="button">LEARN MORE</button></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- business-hero end -->
+		<!-- Our clinets start -->
+		<section class="our-clients">
+			<div class="container">
+				<div class="client-list">
+					<div class="content-title">Our Corporate Clients</div>
+					<div class="logo-list">
+						<ul>
+							<li><a href="#"><img src="images/clients/cocacola-corp.png" /></a></li>
+							<li><a href="#"><img src="images/clients/visa-corp.png" /></a></li>
+							<li><a href="#"><img src="images/clients/cisco-corp.png" /></a></li>
+							<li><a href="#"><img src="images/clients/wipro_new-corp.png" /></a></li>
+							<li><a href="#"><img src="images/clients/compdd.png" /></a></li>
+							<li><a href="#"><img src="images/clients/city-corp.png" /></a></li>
+							<li><a href="#"><img src="images/clients/honeywell-corp.png" /></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Our clinets end -->
+	</main>
+	<!-- Footer start -->
+	<footer>
+		<section class="main-footer">
+			<div class="container">
+				<div class="brand-logo"><img src="images/Edureka_footer_logo.webp" alt="Brand Logo"></div>
+				<div class="row nav-links">
+					<div class="col-md-4 footer-col footer-col-01">
+						<h3>Trending Certification Courses </h3>
+						<ul class="footer-nav">
+							<li><a href="#">DevOps Certification Training Course
+								</a></li>
+							<li><a href="#">
+									AWS Certification Training Course for Solutions Architect
+								</a></li>
+							<li><a href="#">
+									Big Data Hadoop Certification Training Course
+								</a></li>
+							<li><a href="#">
+									Tableau Certification Training Course
+								</a></li>
+							<li><a href="#">
+									Data Science with Python Certification Course
+								</a></li>
+							<li><a href="#">
+									Selenium Certification Training Course
+								</a></li>
+							<li><a href="#">
+									PMP Certification Training Course
+								</a></li>
+							<li><a href="#">
+									RPA using UiPath Certification Training
+								</a></li>
+							<li><a href="#">
+									Apache Spark and Scala Certification Training Course
+								</a></li>
+							<li><a href="#">
+									Microsoft Power BI Certification Training Course
+								</a></li>
+							<li><a href="#">
+									Java Certification Training Course
+								</a></li>
+							<li><a href="#">
+									Python Programming Certification Course
+								</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4 footer-col footer-col-02">
+						<h3>Trending Master Courses</h3>
+						<ul class="footer-nav">
+							<li><a href="#">
+									Data Science Training Masters Program
+								</a></li>
+							<li><a href="#">
+									DevOps Engineer Masters Program
+								</a></li>
+							<li><a href="#">
+									Cloud Architect Course - Masters Program
+								</a></li>
+							<li><a href="#">
+									Big Data Architect Masters Program
+								</a></li>
+							<li><a href="#">
+									Machine Learning Course Masters Program
+								</a></li>
+							<li><a href="#">
+									Full Stack Developer Course
+								</a></li>
+							<li><a href="#">
+									Business Intelligence Masters Program
+								</a></li>
+							<li><a href="#">
+									Data Analytics Masters Program
+								</a></li>
+							<li><a href="#">
+									Automation Testing Engineer Course For Masters
+								</a></li>
+							<li><a href="#">
+									Post Graduate Diploma in Artificial Intelligence Course
+								</a></li>
+							<li><a href="#">
+									Post Graduate Program in DevOps
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-2 footer-col footer-col-02">
+						<h3>Company</h3>
+						<ul class="footer-nav">
+							<li>
+								<a href="#">About us</a>
+							</li>
+							<li>
+								<a href="#">News Media</a>
+							</li>
+							<li>
+								<a href="#">Reviews</a>
+							</li>
+							<li>
+								<a href="#">Contact us</a>
+							</li>
+							<li>
+								<a href="#">Webinars</a>
+							</li>
+							<li>
+								<a href="#">Blog</a>
+							</li>
+							<li>
+								<a href="#">Community</a>
+							</li>
+							<li>
+								<a href="#">Locations</a>
+							</li>
+							<li>
+								<a href="#">Sitemap</a>
+							</li>
+							<li>
+								<a href="#">Blog Sitemap</a>
+							</li>
+							<li>
+								<a href="#">Community Sitemap</a>
+							</li>
+							<li>
+								<a href="#">City Sitemap</a>
+							</li>
+							<li>
+								<a href="#">Corporate Training</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-2 footer-col footer-col-02">
+						<h3>Work with us</h3>
+						<ul class="footer-nav">
+							<li>
+								<a href="#">Careers</a>
+							</li>
+							<li>
+								<a href="#">Become an Instructor</a>
+							</li>
+							<li>
+								<a href="#">Become an Affiliate</a>
+							</li>
+							<li>
+								<a href="#">Become a Partner</a>
+							</li>
+							<li>
+								<a href="#">Hire from Edureka</a>
+							</li>
+						</ul>
+						<h3 class="download-app">Download App</h3>
+						<div class="download-links">
+							<a class="apple-app" href="#">
+								<img alt="Apple Store" src="images/applestore_img.png">
+							</a>
+							<a class="android-app" href="#">
+								<img alt="Play Store" src="images/playstore_img.png">
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="row nav-deep-footer-links">
+					<h3>Categories</h3>
+					<ul class="footer-nav">
+						<li><a href="#">Cloud Computing</a></li>
+						<li><a href="#">DevOps</a></li>
+						<li><a href="#">Cyber Security</a></li>
+						<li><a href="#">BI and Visualization</a></li>
+						<li><a href="#">Programming &amp; Frameworks</a>
+						</li>
+						<li><a href="#">Data Science</a></li>
+						<li><a href="#">Project Management and
+								Methodologies</a></li>
+						<li><a href="#">Executive Programs</a></li>
+						<li><a href="#">Artificial Intelligence</a></li>
+						<li><a href="#">Big Data</a></li>
+						<li><a href="#">Software Testing</a></li>
+						<li><a href="#">Frontend Development</a></li>
+						<li><a href="#">Databases</a></li>
+						<li><a href="#">Robotic Process Automation</a></li>
+						<li><a href="#">Data Warehousing and ETL</a></li>
+						<li><a href="#">Mobile Development</a></li>
+						<li><a href="#">Operating Systems</a></li>
+						<li><a href="#">Architecture &amp; Design Patterns</a></li>
+						<li><a href="#">Blockchain</a></li>
+						<li><a href="#">Digital Marketing</a></li>
+					</ul>
+				</div>
+				<div class="row nav-footer-legal-links">
+					<ul class="footer-nav">
+						<li><span>&copy;2024 Brain4ce Education Solutions Pvt. Ltd. All rights Reserved.</span></li>
+						<li><a href="#">Terms & Conditions</a></li>
+						<li><a href="#">Legal & Privacy</a></li>
+					</ul>
+					<div class="icons-list">
+						<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+						<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+						<a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+						<a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="secondary-footer">
+			<div class="container">
+				<span>PMP®,PMI®, PMI-ACP® and PMBOK® are registered marks of the Project Management Institute, Inc.
+					MongoDB®, Mongo and the leaf logo are the registered trademarks of MongoDB, Inc.</span>
+			</div>
+		</section>
+		<section class="tertiary-footer fixed-bottom">
+			<div class="row">
+				<div class="col-md-7 offset-md-2">
+					For Career Assistance : <a href="#"><img class="flag" src="images/flag/inr.png" alt="Indian" /> +91
+						12345 67800 </a> <a href="#"><img class="flag" src="images/flag/usd.png" alt="Indian" /> +18000
+						1800 (Toll Free)</a>
+				</div>
+			</div>
+		</section>
+		<section class="drop-query">
+			<div class="query-title">Drop us a Query<span><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+			</div>
+		</section>
+	</footer>
+	<!-- Footer end -->
+	<script src="js/jquery-3.7.1.js" defer></script>
+	<script src="js/bootstrap.bundle.js" defer></script>
+	<script src="js/jquery.plugin.js" defer></script>
+	<script src="js/jquery.countdown.js" defer></script>
+	<script src="js/counter.js" defer></script>
 
-        <section class="courses">
-            <div class="container">
-                <h2>Career Related Programs</h2>
-                <div class="row course-list">
-                    <div class="col-md-4 col-courses">
-                        <div class="card">
-                            <div class="card-header bg-01">
-                                <div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
-                                <div class="course-name">AWS Certification Training Solutions Architect</div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">AWS Certification Training Solutions...</div>
-                                <div class="card-subtitle">Reviews</div>
-                                <div class="card-rating">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <span> 5</span><span> (35540)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-courses">
-                        <div class="card">
-                            <div class="card-header bg-02">
-                                <div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
-                                <div class="course-name">Advanced Program in Data Science and AI</div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">Advanced Certificate Program in Data...</div>
-                                <div class="card-subtitle">Reviews</div>
-                                <div class="card-rating">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star disabled" aria-hidden="true"></i>
-                                    <i class="fa fa-star disabled" aria-hidden="true"></i>
-                                    <span> 3</span><span> (27860)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-courses">
-                        <div class="card">
-                            <div class="card-header bg-03">
-                                <div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
-                                <div class="course-name">CISSP Certification Training Program Course</div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">CISSP Certification Training Program Course...</div>
-                                <div class="card-subtitle">Reviews</div>
-                                <div class="card-rating">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                                    <span> 4.5 </span><span> (25740)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="courses">
-            <div class="container">
-                <h2>Recent Additions</h2>
-                <div class="row course-list">
-                    <div class="col-md-3 col-courses">
-                        <div class="card">
-                            <div class="card-header bg-01">
-                                <div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
-                                <div class="course-name">AWS Certification Training Solutions Architect</div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">AWS Certification Training Solutions...</div>
-                                <div class="card-subtitle">Reviews</div>
-                                <div class="card-rating">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <span> 5</span><span> (35540)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-courses">
-                        <div class="card">
-                            <div class="card-header bg-02">
-                                <div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
-                                <div class="course-name">Advanced Program in Data Science and AI</div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">Advanced Certificate Program in Data...</div>
-                                <div class="card-subtitle">Reviews</div>
-                                <div class="card-rating">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star disabled" aria-hidden="true"></i>
-                                    <i class="fa fa-star disabled" aria-hidden="true"></i>
-                                    <span> 3</span><span> (27860)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-courses">
-                        <div class="card">
-                            <div class="card-header bg-02">
-                                <div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
-                                <div class="course-name">CISSP Certification Training Program Course</div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">CISSP Certification Training Program Course...</div>
-                                <div class="card-subtitle">Reviews</div>
-                                <div class="card-rating">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                                    <span> 4.5 </span><span> (25740)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-courses">
-                        <div class="card">
-                            <div class="card-header bg-02">
-                                <div class="course-photo"><i class="fa fa-cloud" aria-hidden="true"></i></div>
-                                <div class="course-name">AWS Certification Training Solutions Architect</div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">AWS Certification Training Solutions...</div>
-                                <div class="card-subtitle">Reviews</div>
-                                <div class="card-rating">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star disabled" aria-hidden="true"></i>
-                                    <span> 4</span><span> (15370)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="categories">
-            <div class="container">
-                <h2>Discover Top Categories</h2>
-                <div class="row category-list">
-                    <div class="col-md-2 col-category">
-                        <div class="card">
-                            <div class="card-header">
-                                <!-- <img src="images/cloud.png" class="card-img-top" alt="Category Images"> -->
-                                <i class="fa fa-cloud icon-1" aria-hidden="true"></i>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">Cloud Computing</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2 col-category">
-                        <div class="card">
-                            <div class="card-header">
-                                <i class="fa fa-cloud icon-2" aria-hidden="true"></i>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">DevOps</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2 col-category">
-                        <div class="card">
-                            <div class="card-header">
-                                <!-- <img src="images/cloud.png" class="card-img-top" alt="Category Images"> -->
-                                <i class="fa fa-cloud icon-3" aria-hidden="true"></i>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">Cyber Security</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2 col-category">
-                        <div class="card">
-                            <div class="card-header">
-                                <!-- <img src="images/cloud.png" class="card-img-top" alt="Category Images"> -->
-                                <i class="fa fa-cloud icon-4" aria-hidden="true"></i>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">BI and Visualization</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2 col-category">
-                        <div class="card">
-                            <div class="card-header">
-                                <!-- <img src="images/cloud.png" class="card-img-top" alt="Category Images"> -->
-                                <i class="fa fa-cloud icon-5" aria-hidden="true"></i>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">Programming & Frameworks</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2 col-category">
-                        <div class="card">
-                            <div class="card-header">
-                                <!-- <img src="images/cloud.png" class="card-img-top" alt="Category Images"> -->
-                                <i class="fa fa-cloud icon-6" aria-hidden="true"></i>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">Data Science</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row view-all">
-                    <div class="col-12 col-container">
-                        <a class="view-all-reviews" href="#">VIEW MORE <i class="fa fa-chevron-right"
-                                aria-hidden="true"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="review">
-            <div class="container">
-                <h2>Reviews</h2>
-                <div class="row review-list">
-                    <div class="col-md-4 col-review">
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="reviewer-photo"><img src="images/male-circle.png" /></div>
-                                <div class="reviewer-details">
-                                    <div class="reviewer-name">Ashley Jessica <i class="fa fa-linkedin-square"
-                                            aria-hidden="true"></i></div>
-                                    <div class="reviewer-title">Founder</div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">Human-Computer Interaction (HCI) for...</div>
-                                <div class="card-rating">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star-o" aria-hidden="true"></i>
-                                </div>
-                                <div class="card-text">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's... <a href="#">Read More</a> </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-review">
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="reviewer-photo"><img src="images/male-circle.png" /></div>
-                                <div class="reviewer-details">
-                                    <div class="reviewer-name">Michael Jacob <i class="fa fa-linkedin-square"
-                                            aria-hidden="true"></i></div>
-                                    <div class="reviewer-title">Fullstack Development Manager</div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">DevOps Certification Training Course...</div>
-                                <div class="card-rating">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star-o" aria-hidden="true"></i>
-                                    <i class="fa fa-star-o" aria-hidden="true"></i>
-                                </div>
-                                <div class="card-text">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's... <a href="#">Read More</a> </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-review">
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="reviewer-photo"><img src="images/female-circle.png" /></div>
-                                <div class="reviewer-details">
-                                    <div class="reviewer-name">Madison Emily <i class="fa fa-linkedin-square"
-                                            aria-hidden="true"></i></div>
-                                    <div class="reviewer-title">Project Manager</div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">React.js Training Course With...</div>
-                                <div class="card-rating">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                </div>
-                                <div class="card-text">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's... <a href="#">Read More</a> </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row view-all">
-                    <div class="col-12 col-container">
-                        <a class="view-all-reviews" href="#">VIEW ALL REVIEWS <i class="fa fa-chevron-right"
-                                aria-hidden="true"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="hero-strip">
-            <div class="container">
-                <div class="strip-container">
-                    <div class="strip-content">
-                        <p>Enroll, Learn, Grow, Repeat! Get ready to achieve your learning goals
-                            with Edureka</p>
-                    </div>
-                    <div class="strip-button">
-                        <button class="btn btn-primary" type="button">View All Courses</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="business-hero">
-            <div class="card text-bg-dark">
-                <img src="images/bg/edureka-business.png" class="card-img" alt="Business Image">
-                <div class="card-img-overlay">
-                    <div class="container">
-                        <div class="card-body">
-                            <div class="card-tag">edureka! <small>for Business</small></div>
-                            <div class="card-title">No more dull edges in your company. Make your employees into
-                                masters.
-                            </div>
-                            <div class="card-subtitle">Nurture talent with instructor-led courses on trending
-                                technologies
-                            </div>
-                        </div>
-                        <div class="card-footer"><button class="btn btn-primary" type="button">LEARN MORE</button></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="our-clients">
-            <div class="container">
-                <div class="client-list">
-                    <div class="content-title">Our Corporate Clients</div>
-                    <div class="logo-list">
-                        <ul>
-                            <li><a href="#"><img src="images/clients/cocacola-corp.png" /></a></li>
-                            <li><a href="#"><img src="images/clients/visa-corp.png" /></a></li>
-                            <li><a href="#"><img src="images/clients/cisco-corp.png" /></a></li>
-                            <li><a href="#"><img src="images/clients/wipro_new-corp.png" /></a></li>
-                            <li><a href="#"><img src="images/clients/compdd.png" /></a></li>
-                            <li><a href="#"><img src="images/clients/city-corp.png" /></a></li>
-                            <li><a href="#"><img src="images/clients/honeywell-corp.png" /></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <section class="main-footer">
-            <div class="container">
-                <div class="brand-logo"><img src="images/Edureka_footer_logo.webp" alt="Brand Logo"></div>
-                <div class="row nav-links">
-                    <div class="col-md-4 footer-col footer-col-01">
-                        <h3>Trending Certification Courses </h3>
-                        <ul class="footer-nav">
-                            <li><a href="#">DevOps Certification Training Course
-                                </a></li>
-                            <li><a href="#">
-                                    AWS Certification Training Course for Solutions Architect
-                                </a></li>
-                            <li><a href="#">
-                                    Big Data Hadoop Certification Training Course
-                                </a></li>
-                            <li><a href="#">
-                                    Tableau Certification Training Course
-                                </a></li>
-                            <li><a href="#">
-                                    Data Science with Python Certification Course
-                                </a></li>
-                            <li><a href="#">
-                                    Selenium Certification Training Course
-                                </a></li>
-                            <li><a href="#">
-                                    PMP Certification Training Course
-                                </a></li>
-                            <li><a href="#">
-                                    RPA using UiPath Certification Training
-                                </a></li>
-                            <li><a href="#">
-                                    Apache Spark and Scala Certification Training Course
-                                </a></li>
-                            <li><a href="#">
-                                    Microsoft Power BI Certification Training Course
-                                </a></li>
-                            <li><a href="#">
-                                    Java Certification Training Course
-                                </a></li>
-                            <li><a href="#">
-                                    Python Programming Certification Course
-                                </a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4 footer-col footer-col-02">
-                        <h3>Trending Master Courses</h3>
-                        <ul class="footer-nav">
-                            <li><a href="#">
-                                    Data Science Training Masters Program
-                                </a></li>
-                            <li><a href="#">
-                                    DevOps Engineer Masters Program
-                                </a></li>
-                            <li><a href="#">
-                                    Cloud Architect Course - Masters Program
-                                </a></li>
-                            <li><a href="#">
-                                    Big Data Architect Masters Program
-                                </a></li>
-                            <li><a href="#">
-                                    Machine Learning Course Masters Program
-                                </a></li>
-                            <li><a href="#">
-                                    Full Stack Developer Course
-                                </a></li>
-                            <li><a href="#">
-                                    Business Intelligence Masters Program
-                                </a></li>
-                            <li><a href="#">
-                                    Data Analytics Masters Program
-                                </a></li>
-                            <li><a href="#">
-                                    Automation Testing Engineer Course For Masters
-                                </a></li>
-                            <li><a href="#">
-                                    Post Graduate Diploma in Artificial Intelligence Course
-                                </a></li>
-                            <li><a href="#">
-                                    Post Graduate Program in DevOps
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-2 footer-col footer-col-02">
-                        <h3>Company</h3>
-                        <ul class="footer-nav">
-                            <li>
-                                <a href="#">About us</a>
-                            </li>
-                            <li>
-                                <a href="#">News Media</a>
-                            </li>
-                            <li>
-                                <a href="#">Reviews</a>
-                            </li>
-                            <li>
-                                <a href="#">Contact us</a>
-                            </li>
-                            <li>
-                                <a href="#">Webinars</a>
-                            </li>
-                            <li>
-                                <a href="#">Blog</a>
-                            </li>
-                            <li>
-                                <a href="#">Community</a>
-                            </li>
-                            <li>
-                                <a href="#">Locations</a>
-                            </li>
-                            <li>
-                                <a href="#">Sitemap</a>
-                            </li>
-                            <li>
-                                <a href="#">Blog Sitemap</a>
-                            </li>
-                            <li>
-                                <a href="#">Community Sitemap</a>
-                            </li>
-                            <li>
-                                <a href="#">City Sitemap</a>
-                            </li>
-                            <li>
-                                <a href="#">Corporate Training</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-2 footer-col footer-col-02">
-                        <h3>Work with us</h3>
-                        <ul class="footer-nav">
-                            <li>
-                                <a href="#">Careers</a>
-                            </li>
-                            <li>
-                                <a href="#">Become an Instructor</a>
-                            </li>
-                            <li>
-                                <a href="#">Become an Affiliate</a>
-                            </li>
-                            <li>
-                                <a href="#">Become a Partner</a>
-                            </li>
-                            <li>
-                                <a href="#">Hire from Edureka</a>
-                            </li>
-                        </ul>
-                        <h3 class="download-app">Download App</h3>
-                        <div class="download-links">
-                            <a class="apple-app" href="#">
-                                <img alt="Apple Store" src="images/applestore_img.png">
-                            </a>
-                            <a class="android-app" href="#">
-                                <img alt="Play Store" src="images/playstore_img.png">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row nav-deep-footer-links">
-                    <h3>Categories</h3>
-                    <ul class="footer-nav">
-                        <li><a href="#">Cloud Computing</a></li>
-                        <li><a href="#">DevOps</a></li>
-                        <li><a href="#">Cyber Security</a></li>
-                        <li><a href="#">BI and Visualization</a></li>
-                        <li><a href="#">Programming &amp; Frameworks</a>
-                        </li>
-                        <li><a href="#">Data Science</a></li>
-                        <li><a href="#">Project Management and
-                                Methodologies</a></li>
-                        <li><a href="#">Executive Programs</a></li>
-                        <li><a href="#">Artificial Intelligence</a></li>
-                        <li><a href="#">Big Data</a></li>
-                        <li><a href="#">Software Testing</a></li>
-                        <li><a href="#">Frontend Development</a></li>
-                        <li><a href="#">Databases</a></li>
-                        <li><a href="#">Robotic Process Automation</a></li>
-                        <li><a href="#">Data Warehousing and ETL</a></li>
-                        <li><a href="#">Mobile Development</a></li>
-                        <li><a href="#">Operating Systems</a></li>
-                        <li><a href="#">Architecture &amp; Design Patterns</a></li>
-                        <li><a href="#">Blockchain</a></li>
-                        <li><a href="#">Digital Marketing</a></li>
-                    </ul>
-                </div>
-                <div class="row nav-footer-legal-links">
-                    <ul class="footer-nav">
-                        <li><span>&copy;2024 Brain4ce Education Solutions Pvt. Ltd. All rights Reserved.</span></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Legal & Privacy</a></li>
-                    </ul>
-                    <div class="icons-list">
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="secondary-footer">
-            <div class="container">
-                <span>PMP®,PMI®, PMI-ACP® and PMBOK® are registered marks of the Project Management Institute, Inc.
-                    MongoDB®, Mongo and the leaf logo are the registered trademarks of MongoDB, Inc.</span>
-            </div>
-        </section>
-        <section class="tertiary-footer fixed-bottom">
-            <div class="row">
-                <div class="col-md-7 offset-md-2">
-                    For Career Assistance : <a href="#"><img class="flag" src="images/flag/inr.png" alt="Indian" /> +91
-                        12345 67800 </a> <a href="#"><img class="flag" src="images/flag/usd.png" alt="Indian" /> +18000
-                        1800 (Toll Free)</a>
-                </div>
-            </div>
-        </section>
-        <section class="drop-query">
-            <div class="query-title">Drop us a Query<span><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
-            </div>
-        </section>
-    </footer>
-    <script src="js/bootstrap.bundle.js" defer></script>
 </body>
 
 </html>

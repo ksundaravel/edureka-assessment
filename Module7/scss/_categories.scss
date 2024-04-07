@@ -1,10 +1,4 @@
 .categories {
-  h2 {
-    margin: 20px 0 25px;
-    font-size: 22px;
-    font-weight: 600;
-    color: #404040;
-  }
   .col-category {
     margin-bottom: 2rem;
   }
@@ -17,30 +11,30 @@
         background: transparent;
         text-align: center;
         border: 0;
-        padding: 1.5rem 0 .75rem 0;
+        padding: 1.5rem 0 0.75rem 0;
         // img {
         //   width: 50px;
         // }
         i {
-            font-size: 2.5rem;
-            &.icon-1 {
-                color: #ff8f9d;
-            }
-            &.icon-2 {
-                color: #6e97ff;
-            }
-            &.icon-3 {
-                color: #91c653;
-            }
-            &.icon-4 {
-                color: #c891f8;
-            }
-            &.icon-5 {
-                color: #7bdcfc;
-            }
-            &.icon-6 {
-                color: #fea101;
-            }
+          font-size: 2.5rem;
+          &.icon-1 {
+            color: #ff8f9d;
+          }
+          &.icon-2 {
+            color: #6e97ff;
+          }
+          &.icon-3 {
+            color: #91c653;
+          }
+          &.icon-4 {
+            color: #c891f8;
+          }
+          &.icon-5 {
+            color: #7bdcfc;
+          }
+          &.icon-6 {
+            color: #fea101;
+          }
         }
       }
       .card-body {

@@ -1,0 +1,42 @@
+<h2 class="pt-4 pb-4">User List</h2>
+<div class="alert alert-success" role="alert" *ngIf="msg != ''">
+  {{msg}}
+</div>
+<div class="alert alert-danger" role="alert" *ngIf="errorMsg != ''">
+  {{errorMsg}}
+</div>
+<table class="table table-bordered">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Full Name</th>
+      <th scope="col">DOB</th>
+      <th scope="col">Address</th>
+      <th scope="col">Phone No</th>
+      <th scope="col">Role</th>
+      <th scope="col">Status</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngIf="userList.length > 0; else elseBlock">
+      <tr appHighlight *ngFor="let user of userList; index as i">
+        <td>{{user.id}}</td>
+        <td>{{user.fullname}}</td>
+        <td>{{user.dob}}</td>
+        <td>{{user.address}}, {{user.city}} </td>
+        <td>{{user.phoneno}}</td>
+        <td>{{user.role}}</td>
+        <td>{{user.status}}</td>
+        <td></td>
+      </tr>
+    </ng-container>
+    <ng-template #elseBlock>
+      <tr>
+				<td colspan="7">
+					No data found
+				</td>
+			</tr>
+    </ng-template>
+  </tbody>
+</table>

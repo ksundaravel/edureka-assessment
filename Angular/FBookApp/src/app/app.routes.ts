@@ -1,6 +1,5 @@
 import { Routes } from "@angular/router";
 import { HomeComponent } from "./pages/home/home.component";
-import { EmployeeListComponent } from "./pages/employee-list/employee-list.component";
 import { ProductsComponent } from "./pages/products/products.component";
 import { ContactsComponent } from "./pages/contacts/contacts.component";
 import { PageNotfoundComponent } from "./pages/page-notfound/page-notfound.component";
@@ -9,6 +8,7 @@ import { RegistrationFormComponent } from "./pages/forms/registration-form/regis
 import { LoginFormComponent } from "./pages/forms/login-form/login-form.component";
 import { authGuard } from "./guards/auth.guard";
 import { ForgotPasswordComponent } from "./pages/forms/forgot-password/forgot-password.component";
+import { UsersComponent } from "./pages/users/users.component";
 
 export const routes: Routes = [
   {
@@ -21,8 +21,8 @@ export const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: "employees",
-    component: EmployeeListComponent,
+    path: "users",
+    component: UsersComponent,
     canActivate:[authGuard], data: {role: 'admin'}
   },
   {

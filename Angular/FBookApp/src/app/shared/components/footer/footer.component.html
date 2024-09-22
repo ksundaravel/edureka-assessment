@@ -8,8 +8,8 @@
 
     <ul class="app-footer-nav nav col-md-4 justify-content-end">
       <li class="nav-item"><a routerLink="home" class="nav-link px-2">Home</a></li>
-      <li class="nav-item"><a routerLink="employees" class="nav-link px-2">Employees</a></li>
-      <li class="nav-item"><a routerLink="products" class="nav-link px-2">Products</a></li>
+      <li class="nav-item" *ngIf="(role === roles.ADMIN)"><a routerLink="users" class="nav-link px-2">Users</a></li>
+      <li class="nav-item" *ngIf="(role === roles.USER)"><a routerLink="products" class="nav-link px-2">Products</a></li>
       <li class="nav-item"><a routerLink="contacts" class="nav-link px-2">Contacts</a></li>
     </ul>
   </footer>

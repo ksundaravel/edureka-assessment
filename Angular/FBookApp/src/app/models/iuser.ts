@@ -10,3 +10,9 @@ export interface IUser {
   status: string,
   id: number
 }
+
+export const Roles ={
+  ADMIN: 'admin',
+  USER: 'user'
+}
+

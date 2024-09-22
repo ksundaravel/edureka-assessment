@@ -2,16 +2,18 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import {
+  BehaviorSubject,
   catchError,
   lastValueFrom,
   Observable,
   of,
   retry,
+  Subject,
   throwError,
 } from "rxjs";
 import { environment } from "../../environments/environment";
 import { JwtHelperService } from "@auth0/angular-jwt";
-import { IUser } from "../models/iuser";
+import { IUser, Roles } from "../models/iuser";
 
 @Injectable({
   providedIn: "root",
@@ -20,8 +22,10 @@ export class AuthService {
   isLoggedIn: boolean;
   userName: string;
   apiUrl: string = "";
+  menuItems: any[] = [];
   jwtHelper = new JwtHelperService();
   httpClient = inject(HttpClient);
+  private roleSubject = new BehaviorSubject<string>('');
 
   constructor(private router: Router) {
     this.isLoggedIn = false;
@@ -40,12 +44,22 @@ export class AuthService {
       catchError(this.handleError) // then handle the error
     );
   }
+
+  setRole(role: string) {
+    this.roleSubject.next(role);
+  }
+
+  getRole():Observable<string> {
+    return this.roleSubject.asObservable();
+  }
+
   isUserLoggedIn(): boolean {
     let token = localStorage.getItem("accessToken");
     return token != null && !this.jwtHelper.isTokenExpired(token);
   }
   logout(): void {
     //this.isLoggedIn = false;
+    this.roleSubject.next('');
     localStorage.removeItem("accessToken");
     this.router.navigate(["home"]);
   }

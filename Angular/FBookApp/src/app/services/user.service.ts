@@ -1,21 +1,21 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, retry, throwError } from 'rxjs';
-import { IEmployeeAPIResponse } from '../models/iemployee-list';
 import { environment } from '../../environments/environment';
+import { IUser } from '../models/iuser';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EmployeeListService {
+export class UserService {
   apiUrl:string = "";
   //apiUrl:string = "https://dummy.restapiexample.com/api/v1"
   constructor(private httpClient: HttpClient) {
-    this.apiUrl = environment.apiEndPoint+"/employees";
+    this.apiUrl = environment.apiEndPoint+"/users";
   }
 
-  getAllEmployee():Observable<IEmployeeAPIResponse> {
-    return this.httpClient.get<IEmployeeAPIResponse>(this.apiUrl).pipe(
+  getAllUser():Observable<IUser[]> {
+    return this.httpClient.get<IUser[]>(this.apiUrl).pipe(
       retry(3), // retry a failed request up to 3 times
       catchError(this.handleError) // then handle the error
     )

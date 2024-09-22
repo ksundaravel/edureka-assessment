@@ -55,7 +55,7 @@ export class RegistrationFormComponent {
   }
   onSubmit() {
     const {fullname,dob,address,city,email,phoneno,password} =this.userForm.value;
-    const payload = {fullname,dob,address,city,email,phoneno,password,'role':'user'};
+    const payload = {fullname,dob,address,city,email,phoneno,password,'role':'user','status':'Active'};
     this.authService.registerUser(payload).subscribe({
       next: (res) => {
         if(res){

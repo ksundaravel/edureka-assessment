@@ -1,15 +1,28 @@
 {
   "users": [
     {
-      "email": "nilson@email.com",
-      "password": "$2a$10$.Z85HBAKXtzqXnokvt/hh.ogly5.fkH.9aouvB9JrvsdDvczoSNwm",
+      "email": "sundaravelmca@test.com",
+      "password": "$2a$10$EZbzBSTN.vtzNDLhyJ3Hwe.n8KnueiXsM.d23OrKaHcVEzi2vKPNm",
       "fullname": "SUNDARAVEL K",
       "dob": "2024-09-10",
+      "address": "Medavakkam",
+      "city": "Chennai",
+      "phoneno": "012356780",
+      "role": "admin",
+      "status": "Active",
+      "id": 1
+    },
+    {
+      "email": "nilson@email.com",
+      "password": "$2a$10$6e3QrjpTmPCohveNahLuvug2oVjAftRU530on/951S0LpPIvzMFoO",
+      "fullname": "Nilson",
+      "dob": "2024-01-01",
       "address": "Iyyanar Palayam, S N Mangalam",
       "city": "Salem",
-      "phoneno": "09944827701",
+      "phoneno": "0215478583",
       "role": "user",
-      "id": 1
+      "status": "Active",
+      "id": 2
     }
   ],
   "employees": {

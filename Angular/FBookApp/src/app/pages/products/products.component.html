@@ -1,0 +1,36 @@
+<h2 class="pt-4 pb-4">Product List</h2>
+<div class="alert alert-success" role="alert" *ngIf="msg != ''">
+  {{msg}}
+</div>
+<div class="alert alert-danger" role="alert" *ngIf="errorMsg != ''">
+  {{errorMsg}}
+</div>
+<table class="table table-bordered">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Product ID</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Product Price</th>
+      <th scope="col">Product Image</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngIf="productList.length > 0; else elseBlock">
+      <tr appHighlight *ngFor="let proList of productList; index as i">
+        <td>{{proList.id}}</td>
+        <td>{{proList.product_name}}</td>
+        <td>{{proList.product_price | currency:'INR'}}</td>
+        <td><img src="assets/images/moto.jpeg" [alt]="proList.product_name"/></td>
+        <td><a [routerLink]="[proList.id]" class="btn btn-primary btn-sm">View More...</a></td>
+      </tr>
+    </ng-container>
+    <ng-template #elseBlock>
+      <tr>
+				<td colspan="5">
+					No data found
+				</td>
+			</tr>
+    </ng-template>
+  </tbody>
+</table>

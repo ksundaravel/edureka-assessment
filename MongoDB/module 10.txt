@@ -1,0 +1,42 @@
+1. Create and Monitor index
+db.collection.createIndex({ "field": 1 });
+db.collection.stats().indexDetails;
+
+
+2. Database Profiling
+
+db.setProfilingLevel(2);
+db.system.profile.find().sort({ ts: -1 }).limit(5).pretty();
+
+
+3. Removing Empty and Redundant Databases or Collections
+show dbs;
+use MyDatabase;
+show collections;
+
+
+4.Remove Empty Collections
+
+Indentiy empty collections
+
+db.getCollectionNames().forEach(function (collection) {
+    if (db[collection].countDocuments() === 0) {
+        print(collection);
+    }
+});
+Remove empty collections
+
+db.getCollectionNames().forEach(function (collection) {
+    if (db[collection].countDocuments() === 0) {
+        db[collection].drop();
+    }
+});
+
+5. Remove Redundant Collections and Databases
+
+db.collection.drop();
+db.dropDatabase();
+db.serverStatus();
+db.stats();  //database
+db.collection.stats(); //collection
+

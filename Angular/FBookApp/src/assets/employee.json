@@ -1,0 +1,42 @@
+[
+  {
+    "EmployeeId": "001",
+    "FirstName": "Sundar",
+    "LastName": "Ranjith",
+    "Salary": 125800,
+    "DOB": "11/02/1983",
+    "Email": "grerererer@gmail.com"
+  },
+  {
+    "EmployeeId": "002",
+    "FirstName": "Kumar",
+    "LastName": "Ranjith",
+    "Salary": 125800,
+    "DOB": new Date("10/08/1984"),
+    "Email": "gvcvvv@gmail.com"
+  },
+  {
+    "EmployeeId": "003",
+    "FirstName": "Sundar",
+    "LastName": "Ranjith",
+    "Salary": 125800,
+    "DOB": new Date("5/06/1985"),
+    "Email": "welcomemail@gmail.com"
+  },
+  {
+    "EmployeeId": "004",
+    "FirstName": "Sunil",
+    "LastName": "Kumar",
+    "Salary": 125800,
+    "DOB": new Date("11/09/1984"),
+    "Email": "testererer@gmail.com"
+  },
+  {
+    "EmployeeId": "005",
+    "FirstName": "Gopi",
+    "LastName": "Kannan",
+    "Salary": 125800,
+    "DOB": new Date("8/09/1983"),
+    "Email": "rrtererer@gmail.com"
+  }
+]

@@ -1,0 +1,25 @@
+nav.navbar {
+   a.navbar-brand {
+    color: #fff;
+    margin-left: 1rem;
+    margin-right: 3rem;
+    font-weight: bold;
+    font-style: italic;
+   }
+  .app-navbar {
+    .navbar-nav {
+      .nav-item{
+        a.nav-link {
+          color: #fff;
+          &:hover {
+            font-weight: bold;
+          }
+        }
+        &.active {
+          font-weight: bold;
+          background-color: orange;
+        }
+      }
+    }
+  }
+}

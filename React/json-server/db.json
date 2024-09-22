@@ -1,0 +1,261 @@
+{
+  "latestmovies": [
+    {
+      "id": "1",
+      "name": "Airlift",
+      "details": "When Iraq invades Kuwait in August 1990, a callous Indian businessman becomes the spokesperson for more than 170,000 stranded countrymen.",
+      "releaseDate": "2024",
+      "duration": "2h 10m",
+      "Ratings": "7.9 (59K)",
+      "image": "1.jpeg",
+      "price": "$20",
+      "availableTickets": "45"
+    },
+    {
+      "id": "2",
+      "name": "Azhar",
+      "details": "Biographical sports drama based on the life of former Indian international cricketer, Mohammad Azharuddin",
+      "releaseDate": "2024",
+      "duration": "2h 18m",
+      "Ratings": "5.7 (6K)",
+      "image": "2.jpeg",
+      "price": "$30",
+      "availableTickets": "45"
+    },
+    {
+      "id": "3",
+      "name": "Bajrangi Bhaijaan",
+      "details": "An Indian man with a magnanimous heart takes a young mute Pakistani girl back to her homeland to reunite her with her family.",
+      "releaseDate": "2024-07-25",
+      "duration": "2h 48m",
+      "Ratings": "8.1 (99K)",
+      "image": "3.jpeg",
+      "price": "$25",
+      "availableTickets": "45"
+    },
+    {
+      "id": "4",
+      "name": "Bajirao Mastani",
+      "details": "An account of the romance between the Maratha general, Baji Rao I and Mastani, princess of Bundelkhand.",
+      "releaseDate": "2024-07-25",
+      "duration": "2h 38m",
+      "Ratings": "7.3 (39K)",
+      "image": "4.jpeg",
+      "price": "$27",
+      "availableTickets": "45"
+    }
+  ],
+  "upcommingmovies": [
+    {
+      "id": "1",
+      "name": "Prem Ratan Dhan Payo",
+      "details": "While recovering from an assassination attempt four days before his coronation, a stern prince is replaced by a romantic lookalike.",
+      "releaseDate": "2025",
+      "duration": "2h 44m",
+      "Ratings": "4.4 (24K)",
+      "image": "15.jpeg",
+      "price": "$17",
+      "availableTickets": "45"
+    },
+    {
+      "id": "2",
+      "name": "Baby",
+      "details": "An elite counter-intelligence unit learns of a plot, masterminded by a maniacal madman. With the clock ticking, it's up to them to track the terrorists' international tentacles and prevent them from striking at the heart of India.",
+      "releaseDate": "2025",
+      "duration": "2h 39m",
+      "Ratings": "4.7 (5K)",
+      "image": "12.jpeg",
+      "price": "$21",
+      "availableTickets": "45"
+    },
+    {
+      "id": "3",
+      "name": "Baahubali: The Beginning",
+      "details": "A child from the Mahishmati kingdom is raised by tribal people and one day learns about his royal heritage, his father's bravery in battle and a mission to overthrow the incumbent ruler.",
+      "releaseDate": "2026",
+      "duration": "2h 29m",
+      "Ratings": "68.1 (99K)",
+      "image": "13.jpeg",
+      "price": "$34",
+      "availableTickets": "45"
+    },
+    {
+      "id": "4",
+      "name": "Gabbar Is Back",
+      "details": "After a vengeful college professor targets corruption in the government, he adopts the name 'Gabbar' and becomes a hero to a weary public.",
+      "releaseDate": "2026",
+      "duration": "2h 40m",
+      "Ratings": "8.3 (69K)",
+      "image": "14.jpeg",
+      "price": "$32",
+      "availableTickets": "45"
+    }
+  ],
+  "events": [
+    {
+      "id": "1",
+      "name": "First Move by Abishek and Nirmal",
+      "details": "Experience the magic of Karan Aujla live on his It Was All A Dream World Tour! Get ready for a night of sensational music as he performs his biggest hits",
+      "releaseDate": "Oct 15th",
+      "duration": "2h 40m",
+      "Ratings": "8.3 (69K)",
+      "image": "8.jpeg",
+      "price": "$16 onwards",
+      "availableTickets": "45"
+    },
+    {
+      "id": "2",
+      "name": "First Move by Abishek and Nirmal",
+      "details": "Experience the magic of Karan Aujla live on his It Was All A Dream World Tour! Get ready for a night of sensational music as he performs his biggest hits",
+      "releaseDate": "Nov 1st",
+      "duration": "2h 22m",
+      "Ratings": "3.3 (39K)",
+      "image": "7.jpeg",
+      "price": "$16 onwards",
+      "availableTickets": "45"
+    },
+    {
+      "id": "3",
+      "name": "Cigarettes After Sex X's India Tour 2025: Mumbai",
+      "details": "Cigarettes After Sex - X's World Tour is heading to India in January 2025! music as he performs his biggest hits",
+      "releaseDate": "Oct 5th",
+      "duration": "2h 55m",
+      "Ratings": "9.3 (59K)",
+      "image": "5.jpeg",
+      "price": "$16 onwards",
+      "availableTickets": "45"
+    },
+    {
+      "id": "4",
+      "name": "Sunburn Arena Ft. Alan Walker - Mumbai",
+      "details": "Experience the magic of Karan Aujla live on his It Was All A Dream World Tour! Get ready for a night of sensational music as he performs his biggest hits",
+      "releaseDate": "Aug 3rd",
+      "duration": "2h 45m",
+      "Ratings": "6.3 (89K)",
+      "image": "4.jpeg",
+      "price": "$16 onwards",
+      "availableTickets": "45"
+    }
+  ],
+  "book": [
+    {
+      "id": 392,
+      "movieId": "2",
+      "tickets": 1,
+      "type": "latest",
+      "time": "10 AM"
+    },
+    {
+      "id": 742,
+      "movieId": "2",
+      "tickets": 1,
+      "type": "latest",
+      "time": "06 PM"
+    },
+    {
+      "id": 805,
+      "movieId": "2",
+      "tickets": 1,
+      "type": "latest",
+      "time": "02 PM"
+    },
+    {
+      "id": 65,
+      "movieId": "2",
+      "tickets": 1,
+      "type": "latest",
+      "time": "02 PM"
+    },
+    {
+      "id": 322,
+      "movieId": "3",
+      "tickets": 1,
+      "type": "upcomming",
+      "time": "02 PM"
+    },
+    {
+      "id": 735,
+      "movieId": "3",
+      "tickets": 1,
+      "type": "upcomming",
+      "time": "02 PM"
+    },
+    {
+      "id": 373,
+      "movieId": "3",
+      "tickets": 1,
+      "type": "upcomming",
+      "time": "08 AM"
+    },
+    {
+      "id": 801,
+      "movieId": "3",
+      "tickets": 1,
+      "type": "upcomming",
+      "time": "08 AM"
+    },
+    {
+      "id": 857,
+      "movieId": "3",
+      "tickets": 1,
+      "type": "upcomming",
+      "time": "10 AM"
+    },
+    {
+      "id": 371,
+      "movieId": "3",
+      "tickets": 1,
+      "type": "upcomming",
+      "time": "02 PM"
+    },
+    {
+      "id": "917",
+      "movieId": "3",
+      "tickets": 3,
+      "type": "upcomming",
+      "time": "02 PM"
+    },
+    {
+      "id": "679",
+      "movieId": "3",
+      "tickets": 6,
+      "type": "latest",
+      "time": "06 PM"
+    },
+    {
+      "id": "838",
+      "movieId": "1",
+      "tickets": 40,
+      "type": "latest",
+      "time": "02 PM"
+    },
+    {
+      "id": "729",
+      "movieId": "3",
+      "tickets": 1,
+      "type": "events",
+      "time": "02 PM"
+    },
+    {
+      "id": "606",
+      "movieId": "1",
+      "tickets": 25,
+      "type": "upcomming",
+      "time": "02 PM"
+    },
+    {
+      "id": "415",
+      "movieId": "3",
+      "tickets": 1,
+      "type": "upcomming",
+      "time": "02 PM"
+    },
+    {
+      "id": "879",
+      "movieId": "2",
+      "tickets": 3,
+      "type": "latest",
+      "time": "02 PM"
+    }
+  ]
+}

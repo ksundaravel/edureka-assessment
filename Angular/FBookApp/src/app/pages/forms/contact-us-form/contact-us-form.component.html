@@ -1,0 +1,61 @@
+<h4>Contact Us</h4>
+<form class="contactus-form" #contactusForm="ngForm" (ngSubmit)="contactusForm.form.valid && saveFn(contactusForm)"  novalidate>
+  <div class="form-group pt-2">
+    <label>Full Name</label>
+    <input type="text" class="form-control" name="fullname" [(ngModel)]="contactObj.fullname" required
+      #fullname="ngModel">
+      <div class="errormsg" *ngIf="!fullname?.valid && (fullname?.dirty || fullname?.touched)">
+        Invalid First Name
+        <div *ngIf="fullname?.errors?.['required']">
+           First Name is required
+        </div>
+        <div *ngIf="fullname?.errors?.['minlength']">
+          First Name Minimum Length should be {{fullname?.errors?.['minlength']?.requiredLength}}
+        </div>
+      </div>
+  </div>
+  <div class="form-group pt-2">
+    <label>Email</label>
+    <input type="text" class="form-control" name="email" [(ngModel)]="contactObj.email" required email #email="ngModel">
+    <div class="errormsg" *ngIf="!email?.valid && (email?.dirty || email?.touched)">
+      Invalid Email
+      <div *ngIf="email?.errors?.['required']">
+         Email is required
+      </div>
+    </div>
+  </div>
+  <div class="form-group pt-2">
+    <label>Phone Number</label>
+    <input type="text" class="form-control" name="phoneno" [(ngModel)]="contactObj.phoneno" required minlength="10" pattern="^[0-9]+$" maxlength="12" #phoneno="ngModel">
+    <div class="errormsg" *ngIf="!phoneno?.valid && (phoneno?.dirty || phoneno?.touched)">
+      Invalid phoneno
+      <div *ngIf="phoneno?.errors?.['required']">
+         Phone is required
+      </div>
+      <div *ngIf="phoneno?.errors?.['pattern']">
+        Only numbers are allowed
+      </div>
+      <div *ngIf="phoneno?.errors?.['minlength']">
+        Phone Minimum Length should be {{phoneno?.errors?.['minlength']?.requiredLength}}
+      </div>
+      <div *ngIf="phoneno?.errors?.['maxlength']">
+        Phone Maximum Length should be {{phoneno?.errors?.['maxlength']?.requiredLength}}
+      </div>
+    </div>
+  </div>
+  <div class="form-group pt-2">
+    <label>Comments</label>
+    <textarea class="form-control" name="comments" [(ngModel)]="contactObj.comments" required #comments="ngModel"></textarea>
+    <div class="errormsg" *ngIf="!comments?.valid && (comments?.dirty || comments?.touched)">
+      Invalid comments
+      <div *ngIf="comments?.errors?.['required']">
+         comments is required
+      </div>
+    </div>
+  </div>
+
+  <div class="pt-2">
+    <button type="submit" class="btn btn-primary" [disabled]="contactusForm.invalid">Save</button>
+    <button type="reset" class="btn btn-primary ms-1">Reset</button>
+  </div>
+</form>

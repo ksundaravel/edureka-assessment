@@ -1,0 +1,170 @@
+1. Set Up Your Java Project
+
+IntelliJ IDEA setup
+
+2. Add MongoDB Java Driver to Your Project
+
+Dependency addding (drivers added)
+
+<dependency>
+  <groupId>org.mongodb</groupId>
+  <artifactId>mongodb-driver-sync</artifactId>
+  <version>4.4.0</version>
+</dependency>
+
+3. Create a MongoDB Connection in java
+
+
+import com.mongodb.ConnectionString;
+import com.mongodb.MongoClientSettings;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
+
+public class MongoDBConnection {
+
+    private static MongoClient mongoClient;
+    private static MongoDatabase database;
+
+    public static void connect() {
+        // Connection string for a replica set
+        String connectionString = "mongodb://primary_node_ip:27017,secondary_node1_ip:27017,secondary_node2_ip:27017/?replicaSet=rs0";
+
+        // Create a ConnectionString object
+        ConnectionString connString = new ConnectionString(connectionString);
+
+        // Set MongoClient settings
+        MongoClientSettings settings = MongoClientSettings.builder()
+                .applyConnectionString(connString)
+                .build();
+
+        // Create a MongoClient object
+        mongoClient = MongoClients.create(settings);
+
+        // Connect to the database
+        database = mongoClient.getDatabase("MyDatabase");
+
+        System.out.println("Connected to MongoDB!");
+    }
+
+    public static MongoDatabase getDatabase() {
+        return database;
+    }
+
+    public static void close() {
+        if (mongoClient != null) {
+            mongoClient.close();
+        }
+    }
+
+    public static void main(String[] args) {
+        connect();
+        
+        
+        for (String name : database.listCollectionNames()) {
+            System.out.println(name);
+        }
+
+        close();
+    }
+}
+4. Using MongoDB in Your Application
+
+
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
+
+public class MongoDBOperations {
+
+    public static void main(String[] args) {
+        MongoDBConnection.connect();
+        MongoDatabase database = MongoDBConnection.getDatabase();
+
+        MongoCollection<Document> collection = database.getCollection("your_collection");
+
+        Document doc = new Document("name", "Apple")
+                .append("category", "Fruit")
+                .append("price", 1.2);
+
+        collection.insertOne(doc);
+
+        System.out.println("Document inserted!");
+
+        MongoDBConnection.close();
+    }
+}
+5. CRUD Operations
+
+
+Read a Document
+
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
+import org.bson.Document;
+
+public class MongoDBRead {
+
+    public static void main(String[] args) {
+        MongoDBConnection.connect();
+        MongoDatabase database = MongoDBConnection.getDatabase();
+
+        MongoCollection<Document> collection = database.getCollection("your_collection");
+
+        Document myDoc = collection.find(Filters.eq("name", "Apple")).first();
+        if (myDoc != null) {
+            System.out.println("Found a document: " + myDoc.toJson());
+        } else {
+            System.out.println("No document found with the name Apple");
+        }
+
+        MongoDBConnection.close();
+    }
+}
+Update a Document
+
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.Updates;
+import org.bson.Document;
+
+public class MongoDBUpdate {
+
+    public static void main(String[] args) {
+        MongoDBConnection.connect();
+        MongoDatabase database = MongoDBConnection.getDatabase();
+
+        MongoCollection<Document> collection = database.getCollection("your_collection");
+
+        collection.updateOne(Filters.eq("name", "Apple"), Updates.set("price", 1.5));
+
+        System.out.println("Document updated!");
+
+        MongoDBConnection.close();
+    }
+}
+Delete a Document
+
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
+import org.bson.Document;
+
+public class MongoDBDelete {
+
+    public static void main(String[] args) {
+        MongoDBConnection.connect();
+        MongoDatabase database = MongoDBConnection.getDatabase();
+
+        MongoCollection<Document> collection = database.getCollection("your_collection");
+
+        collection.deleteOne(Filters.eq("name", "Apple"));
+
+        System.out.println("Document deleted!");
+
+        MongoDBConnection.close();
+    }
+}

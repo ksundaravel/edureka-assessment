@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="offset-md-4 col-md-4">
+    <h2 class="pt-4 pb-4">Login</h2>
+    <div class="alert alert-danger" role="alert" *ngIf="errorMsg != ''">
+      {{errorMsg}}
+    </div>
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmitFn()">
+      <div class="form-group pt-2">
+        <label>Email</label>
+        <input type="text" class="form-control" name="email" formControlName="email">
+        <div class="errormsg"
+          *ngIf="!loginForm.get('email')?.valid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
+          Invalid email
+          <div *ngIf="loginForm.get('email')?.errors?.['required']">
+            email is required
+          </div>
+        </div>
+      </div>
+      <div class="form-group pt-2">
+        <label>Password</label>
+        <input type="password" class="form-control" name="password" formControlName="password">
+        <div class="errormsg"
+          *ngIf="!loginForm.get('password')?.valid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+          Invalid password
+          <div *ngIf="loginForm.get('password')?.errors?.['required']">
+            Password is required
+          </div>
+        </div>
+      </div>
+      <div class="text-align-right">
+        <a class="btn btn-link forgot-password-link" routerLink="../forgot-password" >forgot Password</a>
+      </div>
+      <div class="pt-2">
+        <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Save</button>
+        <button type="reset" class="btn btn-primary ms-1">Reset</button>
+      </div>
+    </form>
+  </div>
+</div>

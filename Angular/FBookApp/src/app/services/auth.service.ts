@@ -1,0 +1,92 @@
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { inject, Injectable } from "@angular/core";
+import { Router } from "@angular/router";
+import {
+  catchError,
+  lastValueFrom,
+  Observable,
+  of,
+  retry,
+  throwError,
+} from "rxjs";
+import { environment } from "../../environments/environment";
+import { JwtHelperService } from "@auth0/angular-jwt";
+import { IUser } from "../models/iuser";
+
+@Injectable({
+  providedIn: "root",
+})
+export class AuthService {
+  isLoggedIn: boolean;
+  userName: string;
+  apiUrl: string = "";
+  jwtHelper = new JwtHelperService();
+  httpClient = inject(HttpClient);
+
+  constructor(private router: Router) {
+    this.isLoggedIn = false;
+    this.userName = "";
+    this.apiUrl = environment.apiEndPoint;
+  }
+
+  registerUser(payload: any) {
+    return this.httpClient.post(this.apiUrl + "/users", payload).pipe(
+      catchError(this.handleError) // then handle the error
+    );
+  }
+
+  login(payload: any): Observable<any> {
+    return this.httpClient.post(this.apiUrl + "/login", payload).pipe(
+      catchError(this.handleError) // then handle the error
+    );
+  }
+  isUserLoggedIn(): boolean {
+    let token = localStorage.getItem("accessToken");
+    return token != null && !this.jwtHelper.isTokenExpired(token);
+  }
+  logout(): void {
+    //this.isLoggedIn = false;
+    localStorage.removeItem("accessToken");
+    this.router.navigate(["home"]);
+  }
+  getToken(): string | null {
+    return localStorage.getItem("accessToken");
+  }
+
+  getUserRole(): string | null {
+    let token = localStorage.getItem("accessToken");
+    return token ? this.decodeToken(token).role : null;
+  }
+
+  getAllUsers(): Observable<IUser[]> {
+    return this.httpClient.get<IUser[]>(this.apiUrl + "/users");
+  }
+
+  async forgotPassword(payload: any) {
+    const users$ = this.getAllUsers();
+    const finalUsers = await lastValueFrom(users$);
+    return finalUsers.find(
+      (user) => user.email === payload.email && user.dob === payload.dob
+    );
+  }
+
+  changePassword(payload: any) {
+    return this.httpClient.put(`${this.apiUrl}/users/${payload.id}`, payload);
+  }
+
+  private decodeToken(token: string): any {
+    return this.jwtHelper.decodeToken(token);
+  }
+
+  private handleError(error: HttpErrorResponse) {
+    if (error.status === 0) {
+      console.error("An error occurred:", error.error);
+    } else {
+      console.error(
+        `Please try after sometime. Backend returned code ${error.status}, body was: `,
+        error.error
+      );
+    }
+    return throwError(() => new Error(error.error));
+  }
+}

@@ -1,0 +1,26 @@
+
+# Data Modeling
+
+{
+  "_id": "unique_product_id",
+  "supc": "unique_supc_code",
+  "pogId": "unique_pog_id",
+  "brand": "brand_name",
+  "category": "category_name",
+  "name": "product_name",
+  "price": "product_price",
+  "description": "product_description",
+  "attributes": {
+    "attribute1": "value1",
+    "attribute2": "value2",
+    // more attributes as needed
+  },
+  // Additional fields as necessary
+}
+
+# Indexing
+
+db.products.createIndex({ supc: 1, pogId: 1, brand: 1, category: 1 });
+db.products.createIndex({ category: 1, brand: 1 });
+db.products.createIndex({ supc: 1 });
+db.products.createIndex({ pogId: 1 });

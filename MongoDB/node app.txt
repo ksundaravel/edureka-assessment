@@ -1,0 +1,107 @@
+# Node Js Project setup
+
+1.Initialize a Node.js Project
+
+npm init -y
+
+2. Install Dependencies
+
+npm install express mongodb
+
+3.Create the Server and Routes
+
+const express = require('express');
+const { MongoClient, ObjectId } = require('mongodb');
+const bodyParser = require('body-parser');
+
+const app = express();
+const port = 3000;
+
+// Middleware
+app.use(bodyParser.json());
+
+const url = 'mongodb+srv://sundaravelmca:XXXXXXXX@cluster0.o9wmeas.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const dbName = 'Mongo_DB_Project';
+let db;
+
+// Connect to MongoDB
+MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
+  if (err) throw err;
+  db = client.db(dbName);
+  console.log(`Connected to database: ${dbName}`);
+  
+  app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+  });
+});
+
+// CRUD routes
+app.post('/api/categories', async (req, res) => {
+  const collection = db.collection('Categories');
+  const document = req.body;
+  try {
+    const result = await collection.insertOne(document);
+    res.status(201).json(result.ops[0]);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.get('/api/categories', async (req, res) => {
+  const collection = db.collection('Categories');
+  try {
+    const documents = await collection.find({}).toArray();
+    res.status(200).json(documents);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.get('/api/categories/:id', async (req, res) => {
+  const collection = db.collection('Categories');
+  const id = req.params.id;
+  try {
+    const document = await collection.findOne({ _id: new ObjectId(id) });
+    if (document) {
+      res.status(200).json(document);
+    } else {
+      res.status(404).json({ error: 'Document not found' });
+    }
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.put('/api/categories/:id', async (req, res) => {
+  const collection = db.collection('Categories');
+  const id = req.params.id;
+  const updates = req.body;
+  try {
+    const result = await collection.updateOne({ _id: new ObjectId(id) }, { $set: updates });
+    if (result.matchedCount > 0) {
+      res.status(200).json({ message: 'Document updated' });
+    } else {
+      res.status(404).json({ error: 'Document not found' });
+    }
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.delete('/api/categories/:id', async (req, res) => {
+  const collection = db.collection('Categories');
+  const id = req.params.id;
+  try {
+    const result = await collection.deleteOne({ _id: new ObjectId(id) });
+    if (result.deletedCount > 0) {
+      res.status(200).json({ message: 'Document deleted' });
+    } else {
+      res.status(404).json({ error: 'Document not found' });
+    }
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
+node server.js

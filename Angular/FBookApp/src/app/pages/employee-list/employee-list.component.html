@@ -1,0 +1,36 @@
+<h2 class="pt-4 pb-4">Employee List</h2>
+<div class="alert alert-success" role="alert" *ngIf="msg != ''">
+  {{msg}}
+</div>
+<div class="alert alert-danger" role="alert" *ngIf="errorMsg != ''">
+  {{errorMsg}}
+</div>
+<table class="table table-bordered">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Employee ID</th>
+      <th scope="col">Employee Name</th>
+      <th scope="col">Employee Salary</th>
+      <th scope="col">Employee Age</th>
+      <th scope="col">Employee Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngIf="employeeList.length > 0; else elseBlock">
+      <tr appHighlight *ngFor="let emplist of employeeList; index as i">
+        <td>{{emplist.id}}</td>
+        <td>{{emplist.employee_name}}</td>
+        <td>{{emplist.employee_salary | currency:'INR'}}</td>
+        <td>{{emplist.employee_age}}</td>
+        <td>{{emplist.profile_image}}</td>
+      </tr>
+    </ng-container>
+    <ng-template #elseBlock>
+      <tr>
+				<td colspan="5">
+					No data found
+				</td>
+			</tr>
+    </ng-template>
+  </tbody>
+</table>

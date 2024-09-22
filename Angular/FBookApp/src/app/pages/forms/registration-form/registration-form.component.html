@@ -1,0 +1,136 @@
+<div class="row">
+  <div class="offset-md-2  col-md-8">
+    <h2 class="pt-4 pb-4">Registration</h2>
+    <h4 class="pb-2">New User Registration</h4>
+    <div class="alert alert-success" role="alert" *ngIf="msg != ''">
+      {{msg}}
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="errorMsg != ''">
+      {{errorMsg}}
+    </div>
+    <form class="registration-form" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="form-group pt-2">
+        <label>Full Name</label>
+        <input type="text" class="form-control" name="fullname" formControlName="fullname">
+        <div class="errormsg"
+          *ngIf="!userForm.get('fullname')?.valid && (userForm.get('fullname')?.dirty || userForm.get('fullname')?.touched)">
+          Invalid Full Name
+          <div *ngIf="userForm.get('fullname')?.errors?.['required']">
+            Full Name is required
+          </div>
+          <div *ngIf="userForm.get('fullname')?.errors?.['minlength']">
+            First Name Minimum Length should be {{userForm.get('fullname')?.errors?.['minlength']?.requiredLength}}
+          </div>
+        </div>
+      </div>
+      <div class="form-group pt-2">
+        <label>DOB</label>
+        <input type="date" class="form-control" name="dob" formControlName="dob">
+        <div class="errormsg"
+          *ngIf="!userForm.get('dob')?.valid && (userForm.get('dob')?.dirty || userForm.get('dob')?.touched)">
+          Invalid password
+          <div *ngIf="userForm.get('dob')?.errors?.['required']">
+            DOB is required
+          </div>
+        </div>
+      </div>
+      <div class="form-group pt-2">
+        <label>Address</label>
+        <input type="text" class="form-control" name="address" formControlName="address">
+        <div class="errormsg"
+          *ngIf="!userForm.get('address')?.valid && (userForm.get('address')?.dirty || userForm.get('address')?.touched)">
+          Invalid address
+          <div *ngIf="userForm.get('address')?.errors?.['required']">
+            address is required
+          </div>
+        </div>
+      </div>
+      <div class="form-group pt-2">
+        <label>City</label>
+        <input type="text" class="form-control" name="city" formControlName="city">
+        <div class="errormsg"
+          *ngIf="!userForm.get('city')?.valid && (userForm.get('city')?.dirty || userForm.get('city')?.touched)">
+          Invalid city
+          <div *ngIf="userForm.get('city')?.errors?.['required']">
+            city is required
+          </div>
+        </div>
+      </div>
+      <div class="form-group pt-2">
+        <label>Email</label>
+        <input type="text" class="form-control" name="email" formControlName="email">
+        <div class="errormsg"
+          *ngIf="!userForm.get('email')?.valid && (userForm.get('email')?.dirty || userForm.get('email')?.touched)">
+          Invalid email
+          <div *ngIf="userForm.get('email')?.errors?.['required']">
+            email is required
+          </div>
+        </div>
+      </div>
+      <div class="form-group pt-2">
+        <label>Phone Number</label>
+        <input type="text" class="form-control" name="phoneno" formControlName="phoneno">
+        <div class="errormsg"
+          *ngIf="!userForm.get('phoneno')?.valid && (userForm.get('phoneno')?.dirty || userForm.get('phoneno')?.touched)">
+          Invalid phoneno
+          <div *ngIf="userForm.get('phoneno')?.errors?.['required']">
+            Phone is required
+          </div>
+          <div *ngIf="userForm.get('phoneno')?.errors?.['minlength']">
+            Phone Minimum Length should be {{userForm.get('phoneno')?.errors?.['minlength']?.requiredLength}}
+          </div>
+          <div *ngIf="userForm.get('phoneno')?.errors?.['maxlength']">
+            Phone Maximum Length should be {{userForm.get('phoneno')?.errors?.['maxlength']?.requiredLength}}
+          </div>
+        </div>
+      </div>
+      <div class="form-group pt-2">
+        <label>Password</label>
+        <input type="password" class="form-control" name="password" formControlName="password">
+        <div class="errormsg"
+          *ngIf="!userForm.get('password')?.valid && (userForm.get('password')?.dirty || userForm.get('password')?.touched)">
+          Invalid password
+          <div *ngIf="userForm.get('password')?.errors?.['required']">
+            Password is required
+          </div>
+          <div *ngIf="userForm.get('password')?.errors?.['minlength']">
+            Password Minimum Length should be {{userForm.get('password')?.errors?.['minlength']?.requiredLength}}
+          </div>
+        </div>
+      </div>
+      <div class="form-group pt-2">
+        <label>Confirm Password</label>
+        <input type="password" class="form-control" name="confirm_password" formControlName="confirm_password">
+        <div class="errormsg"
+          *ngIf="!userForm.get('confirm_password')?.valid && (userForm.get('confirm_password')?.dirty || userForm.get('confirm_password')?.touched) || userForm.errors?.['mismatch']">
+          Invalid Confirm password
+          <div *ngIf="userForm.get('confirm_password')?.errors?.['required']">
+            Confirm Password is required
+          </div>
+          <div *ngIf="userForm.get('confirm_password')?.errors?.['minlength']">
+            Confirm Password Minimum Length should be
+            {{userForm.get('confirm_password')?.errors?.['minlength']?.requiredLength}}
+          </div>
+          <div *ngIf="userForm.errors?.['mismatch']">
+            Confirm Password does not match
+          </div>
+        </div>
+      </div>
+      <div class="form-check pt-2">
+        <input type="checkbox" class="form-check-input" name="acceptedTerms" id="acceptedTerms"
+          formControlName="acceptedTerms">
+        <label class="form-check-label" for="acceptedTerms">Agree with terms and conditions</label>
+        <div class="errormsg"
+          *ngIf="!userForm.get('acceptedTerms')?.valid && (userForm.get('acceptedTerms')?.dirty || userForm.get('acceptedTerms')?.touched)">
+          <div *ngIf="userForm.get('acceptedTerms')?.errors?.['required']">
+            Accept terms and conditions is required
+          </div>
+        </div>
+      </div>
+      <div class="pt-2">
+        <button type="submit" class="btn btn-primary" [disabled]="!userForm.valid">Save</button>
+        <button type="reset" class="btn btn-primary ms-1">Reset</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -61,7 +61,7 @@ export class AuthService {
     //this.isLoggedIn = false;
     this.roleSubject.next('');
     localStorage.removeItem("accessToken");
-    this.router.navigate(["home"]);
+    this.router.navigate(["login"]);
   }
   getToken(): string | null {
     return localStorage.getItem("accessToken");

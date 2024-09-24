@@ -1,4 +1,4 @@
-<header class="p-3 bg-primary text-white">
+<header class="p-1 bg-primary text-white">
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
       <nav class="navbar navbar-expand-lg navbar-light bg-primary me-4">
@@ -12,12 +12,19 @@
             <li class="nav-item" routerLinkActive="active">
               <a class="nav-link" routerLink="home">Home</a>
             </li>
-            <li *ngIf="(role === roles.ADMIN)" class="nav-item" routerLinkActive="active">
+            @if(role === roles.ADMIN) {
+            <li class="nav-item" routerLinkActive="active">
               <a class="nav-link" routerLink="users">Users</a>
             </li>
-            <li *ngIf="(role === roles.USER)" class="nav-item" routerLinkActive="active">
-              <a class="nav-link" routerLink="products">Products</a>
+            }
+            @if(role === roles.USER) {
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" routerLink="network">Network</a>
             </li>
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" routerLink="friends">Friends</a>
+            </li>
+            }
             <li class="nav-item" routerLinkActive="active">
               <a class="nav-link" routerLink="contacts">Contacts</a>
             </li>
@@ -28,16 +35,34 @@
       <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ms-auto">
         <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
       </form>
-
-      <div class="text-end" *ngIf="!authService.isUserLoggedIn();else logoutRef">
+      @if(!authService.isUserLoggedIn()){
+      <div class="text-end">
         <a class="btn btn-outline-light me-2" routerLink="login">Login</a>
         <a class="btn btn-warning text-white" routerLink="registration">Sign-up</a>
       </div>
-      <ng-template #logoutRef>
-        <div class="text-end">
-          <a class="btn btn-warning text-white" (click)="authService.logout()">Logout</a>
+      }@else {
+      <nav class="navbar navbar-expand-lg bg-transparent">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#"><i class="bi bi-bell-fill"></i></a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Sundar <i class="bi bi-person-circle"></i>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" routerLink="my-profile">My Profile</a></li>
+                  <li><a class="dropdown-item" (click)="authService.logout()">Logout</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </div>
-      </ng-template>
+      </nav>
+      }
     </div>
   </div>
 </header>

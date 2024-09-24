@@ -6,14 +6,15 @@ import {
   ReactiveFormsModule,
   Validators,
 } from "@angular/forms";
-import { AuthService } from "../../../services/auth.service";
-import Validation from "../../../helpers/validation";
-import { IUser } from "../../../models/iuser";
+import { AuthService } from "../../services/auth.service";
+import Validation from "../../helpers/validation";
+import { IUser } from "../../models/iuser";
+import { ChangePasswordComponent } from "../forms/change-password/change-password.component";
 
 @Component({
   selector: "app-forgot-password",
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, ChangePasswordComponent],
   templateUrl: "./forgot-password.component.html",
   styleUrl: "./forgot-password.component.scss",
 })
@@ -47,10 +48,8 @@ export class ForgotPasswordComponent {
       .forgotPassword(this.forgotPasswordForm.value)
       .then((res) => {
         if (res) {
-          console.log("kkii:",res);
           this.errorMsg = "";
           this.selectedUserForgotPassword = {...res};
-          console.log("kkii:",this.selectedUserForgotPassword);
           this.showPasswordFields = true;
         } else {
           this.errorMsg = "User not fount!!";
@@ -59,30 +58,41 @@ export class ForgotPasswordComponent {
         }
       });
   }
-  onChangeFn() {
-    const { password } = this.passwordChangeForm.value;
-    const payload = {...this.selectedUserForgotPassword,password };
-    console.log(payload);
-    this.authService.changePassword(payload).subscribe({
-      next: (res) => {
-        if(res){
-          this.selectedUserForgotPassword= null;
-          this.msg = "Password change successully completed!!!";
-          this.errorMsg = "";
-          this.passwordChangeCompleted = true;
-          this.passwordChangeForm.reset();
-        }else{
-          console.log("No response");
-        }
-      },
-      error: (e) => {
-        this.errorMsg = "Password change failed!!!";
-        this.msg = "";
-        console.log(e);
-      },
-      complete: () => {
-        console.log("Password change completed");
-      },
-    });
+  onChangeFn(value: boolean) {
+    if(value) {
+      this.selectedUserForgotPassword= null;
+      this.msg = "Password change successully completed!!!";
+      this.errorMsg = "";
+      this.passwordChangeCompleted = true;
+      this.passwordChangeForm.reset();
+    }else{
+      this.errorMsg = "Password change failed!!!";
+      this.msg = "";
+    }
+
+    // const { password } = this.passwordChangeForm.value;
+    // const payload = {...this.selectedUserForgotPassword,password };
+    // console.log(payload);
+    // this.authService.changePassword(payload).subscribe({
+    //   next: (res) => {
+    //     if(res){
+    //       this.selectedUserForgotPassword= null;
+    //       this.msg = "Password change successully completed!!!";
+    //       this.errorMsg = "";
+    //       this.passwordChangeCompleted = true;
+    //       this.passwordChangeForm.reset();
+    //     }else{
+    //       console.log("No response");
+    //     }
+    //   },
+    //   error: (e) => {
+    //     this.errorMsg = "Password change failed!!!";
+    //     this.msg = "";
+    //     console.log(e);
+    //   },
+    //   complete: () => {
+    //     console.log("Password change completed");
+    //   },
+    // });
   }
 }

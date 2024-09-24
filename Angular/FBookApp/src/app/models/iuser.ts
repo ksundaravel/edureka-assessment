@@ -6,7 +6,7 @@ export interface IUser {
   address: string,
   city: string,
   phoneno: string,
-  role: string,
+  role: 'admin' | 'user',
   status: string,
   id: number
 }

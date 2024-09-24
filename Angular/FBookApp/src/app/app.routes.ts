@@ -7,8 +7,11 @@ import { ProductDetailsComponent } from "./pages/product-details/product-details
 import { RegistrationFormComponent } from "./pages/forms/registration-form/registration-form.component";
 import { LoginFormComponent } from "./pages/forms/login-form/login-form.component";
 import { authGuard } from "./guards/auth.guard";
-import { ForgotPasswordComponent } from "./pages/forms/forgot-password/forgot-password.component";
+import { ForgotPasswordComponent } from "./pages/forgot-password/forgot-password.component";
 import { UsersComponent } from "./pages/users/users.component";
+import { MyProfileComponent } from "./pages/my-profile/my-profile.component";
+import { NetworkComponent } from "./pages/network/network.component";
+import { FriendsComponent } from "./pages/friends/friends.component";
 
 export const routes: Routes = [
   {
@@ -53,6 +56,21 @@ export const routes: Routes = [
     path: "forgot-password",
     component: ForgotPasswordComponent,
     canActivate:[authGuard]
+  },
+  {
+    path: "my-profile",
+    component: MyProfileComponent,
+    canActivate:[authGuard], data: {role: ['admin','user']}
+  },
+  {
+    path: "network",
+    component: NetworkComponent,
+    canActivate:[authGuard], data: {role: ['user']}
+  },
+  {
+    path: "friends",
+    component: FriendsComponent,
+    canActivate:[authGuard], data: {role: ['user']}
   },
   {
     path: "**",

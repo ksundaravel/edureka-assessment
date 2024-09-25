@@ -3,7 +3,7 @@
       <div class="card-body">
       <div class="form-group pt-2">
         <label>What's on your mind?</label>
-        <textarea class="form-control" name="comments" [(ngModel)]="postObj.comments" required #comments="ngModel"></textarea>
+        <textarea class="form-control" name="comments" [(ngModel)]="postObj.comments"  #comments="ngModel"></textarea>
         <div class="errormsg" *ngIf="!comments?.valid && (comments?.dirty || comments?.touched)">
           Invalid comments
           <div *ngIf="comments?.errors?.['required']">

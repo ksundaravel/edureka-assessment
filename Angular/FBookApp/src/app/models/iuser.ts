@@ -8,8 +8,15 @@ export interface IUser {
   phoneno: string,
   role: 'admin' | 'user',
   status: string,
-  id: number
+  id: string | number
 }
+
+export interface IUserLoggedIn { 
+  fullname: string, 
+  role: '',
+  id: string | number
+}
+
 
 export const Roles ={
   ADMIN: 'admin',

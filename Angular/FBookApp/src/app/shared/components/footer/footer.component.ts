@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
-import { Roles } from '../../../models/iuser';
+import { IUserLoggedIn, Roles } from '../../../models/iuser';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -15,10 +15,11 @@ export class FooterComponent {
   roles = Roles;
   role: string = '';
   menuItems: any[] = [];
+  loggedUser:IUserLoggedIn | null = null;
   constructor(public authService: AuthService) {}
   ngOnInit() {
     this.authService.getRole().subscribe((res) => {
-      this.role = res;
+      this.loggedUser = res;
     });
   }
 }

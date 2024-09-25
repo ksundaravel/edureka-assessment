@@ -13,7 +13,8 @@ import {
 } from "rxjs";
 import { environment } from "../../environments/environment";
 import { JwtHelperService } from "@auth0/angular-jwt";
-import { IUser, Roles } from "../models/iuser";
+import { IUser, IUserLoggedIn, Roles } from "../models/iuser";
+import { UserService } from "./user.service";
 
 @Injectable({
   providedIn: "root",
@@ -25,7 +26,8 @@ export class AuthService {
   menuItems: any[] = [];
   jwtHelper = new JwtHelperService();
   httpClient = inject(HttpClient);
-  private roleSubject = new BehaviorSubject<string>('');
+  userService = inject(UserService);
+  private roleSubject = new BehaviorSubject<IUserLoggedIn>({fullname: 'Guest',role:'',id:''});
 
   constructor(private router: Router) {
     this.isLoggedIn = false;
@@ -45,11 +47,11 @@ export class AuthService {
     );
   }
 
-  setRole(role: string) {
-    this.roleSubject.next(role);
+  setRole(user: IUserLoggedIn) {
+    this.roleSubject.next(user);
   }
 
-  getRole():Observable<string> {
+  getRole():Observable<IUserLoggedIn> {
     return this.roleSubject.asObservable();
   }
 
@@ -59,8 +61,8 @@ export class AuthService {
   }
   logout(): void {
     //this.isLoggedIn = false;
-    this.roleSubject.next('');
-    localStorage.removeItem("accessToken");
+    this.roleSubject.next({fullname: 'Guest',role:'',id:''});
+    localStorage.clear();
     this.router.navigate(["login"]);
   }
   getToken(): string | null {
@@ -72,12 +74,8 @@ export class AuthService {
     return token ? this.decodeToken(token).role : null;
   }
 
-  getAllUsers(): Observable<IUser[]> {
-    return this.httpClient.get<IUser[]>(this.apiUrl + "/users");
-  }
-
   async forgotPassword(payload: any) {
-    const users$ = this.getAllUsers();
+    const users$ = this.userService.getAllUsers();
     const finalUsers = await lastValueFrom(users$);
     return finalUsers.find(
       (user) => user.email === payload.email && user.dob === payload.dob

@@ -33,7 +33,14 @@ export class LoginFormComponent {
           this.errorMsg = "";
           this.authService.isLoggedIn = true;
           localStorage.setItem("accessToken", JSON.stringify(res.accessToken));
-          this.authService.setRole(res.user.role);
+          const {fullname, role, id} = res.user;
+          const sessionUser = {
+            fullname,
+            role,
+            id
+          }
+          localStorage.setItem("user", JSON.stringify(sessionUser));
+          this.authService.setRole(sessionUser);
           this.router.navigate(["home"]);
         } else {
           this.errorMsg = res.message;

@@ -21,7 +21,7 @@
         <td>{{proList.id}}</td>
         <td>{{proList.product_name}}</td>
         <td>{{proList.product_price | currency:'INR'}}</td>
-        <td><img src="assets/images/moto.jpeg" [alt]="proList.product_name"/></td>
+        <td><img [src]="'images/'+proList.product_image" [alt]="proList.product_name"/></td>
         <td><a [routerLink]="[proList.id]" class="btn btn-primary btn-sm">View More...</a></td>
       </tr>
     </ng-container>

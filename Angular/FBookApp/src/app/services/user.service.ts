@@ -11,11 +11,23 @@ export class UserService {
   apiUrl:string = "";
   //apiUrl:string = "https://dummy.restapiexample.com/api/v1"
   constructor(private httpClient: HttpClient) {
-    this.apiUrl = environment.apiEndPoint+"/users";
+    this.apiUrl = environment.apiEndPoint;
   }
 
-  getAllUser():Observable<IUser[]> {
-    return this.httpClient.get<IUser[]>(this.apiUrl).pipe(
+  getAllUsers():Observable<IUser[]> {
+    return this.httpClient.get<IUser[]>(this.apiUrl+"/users").pipe(
+      retry(3), // retry a failed request up to 3 times
+      catchError(this.handleError) // then handle the error
+    )
+  }
+
+  getLoggedInUser(){
+    const userSession = localStorage.getItem("user");
+    return userSession? JSON.parse(userSession):null;
+  }
+
+  getUserById(id:string):Observable<IUser> {
+    return this.httpClient.get<IUser>(this.apiUrl+"/users/"+id).pipe(
       retry(3), // retry a failed request up to 3 times
       catchError(this.handleError) // then handle the error
     )

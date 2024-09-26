@@ -1,1 +1,37 @@
-<p>my-profile works!</p>
+<div class="row">
+  <div class="col-md-4"><app-my-posts /></div>
+  <div class="col-md-8 mt-4">
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <th [width]="'25%'">Full Name:</th>
+          <td>{{userData.fullname}}</td>
+        </tr>
+        <tr>
+          <th [width]="'25%'">DOB:</th>
+          <td>{{userData.dob}}</td>
+        </tr>
+        <tr>
+          <th [width]="'25%'">city:</th>
+          <td>{{userData.city}}</td>
+        </tr>
+        <tr>
+          <th [width]="'25%'">Address:</th>
+          <td>{{userData.address}}</td>
+        </tr>
+        <tr>
+          <th [width]="'25%'">Email:</th>
+          <td>{{userData.email}}</td>
+        </tr>
+        <tr>
+          <th [width]="'25%'">Phone:</th>
+          <td>{{userData.phoneno}}</td>
+        </tr>
+        <tr>
+          <th [width]="'25%'">Status:</th>
+          <td>{{userData.status}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

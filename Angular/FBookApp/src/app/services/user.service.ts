@@ -28,7 +28,7 @@ export class UserService {
     return userSession? JSON.parse(userSession):null;
   }
 
-  getUserById(id:string):Observable<IUser> {
+  getUserById(id:string | number):Observable<IUser> {
     return this.httpClient.get<IUser>(this.apiUrl+"/users/"+id).pipe(
       retry(3), // retry a failed request up to 3 times
       catchError(this.errorService.handleError) // then handle the error
@@ -43,5 +43,46 @@ export class UserService {
       }),
       catchError(this.errorService.handleError) // then handle the error
     )
+  }
+
+  getRequestUsersList(id: number | string):Observable<IUser[]> {
+    return this.httpClient.get<any>(this.apiUrl+"/friendsRequest").pipe(
+      retry(3), // retry a failed request up to 3 times
+      map((users:any[])=>{
+        return users.filter(user=> user.requestedBy !== id)
+      }),
+      catchError(this.errorService.handleError) // then handle the error
+    )
+  }
+
+
+
+
+  // getOtherUsersList(id: number | string):Observable<any> {
+  //   return this.httpClient.get<IUser[]>(this.apiUrl+"/users").pipe(
+  //     retry(3), // retry a failed request up to 3 times
+  //     map((users:IUser[])=>{
+  //       const usersList = users.filter(user=> user.id !== id)
+  //       return forkJoin(usersList.map(userId => {
+  //         this.httpClient.get(this.apiUrl + "/friendsRequest").pipe(map(res=> users.map(u=>({
+  //           ...u,
+  //           users: users.find(user=> u.id === user.id)
+  //         }))))
+  //       }))
+  //     }),
+  //     catchError(this.errorService.handleError) // then handle the error
+  //   )
+  // }
+
+  addPost(payload: any) {
+    return this.httpClient.post(this.apiUrl + "/posts", payload).pipe(
+      catchError(this.errorService.handleError) // then handle the error
+    );
+  }
+
+  sendFriendRequest(payload: any) {
+    return this.httpClient.post(this.apiUrl + "/friendsRequest", payload).pipe(
+      catchError(this.errorService.handleError) // then handle the error
+    );
   }
 }

@@ -30,6 +30,17 @@ export class NetworkComponent implements OnInit {
   }
 
   sendRequest(requestTo: number | string){
+    const payload = {
+      requestedBy: this.loggedUser.id,
+      requestedTo: requestTo,
+      requestStatus: 'Pending',
+      requestedOn: new Date(),
+    };
 
+    this.userService.sendFriendRequest(payload).subscribe((res) => {
+      if(res){
+       console.log("Successfully request")
+      }
+    });
   }
 }

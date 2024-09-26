@@ -1,1 +1,30 @@
-<p>network works!</p>
+<div class="row">
+  <div class="col-md-4"><app-my-posts /></div>
+  <div class="col-md-8 mt-4">
+    <table class="table table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Full Name</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="userList$ | async as userLists; else elseBlock">
+          <tr *ngFor="let user of userList$ | async as userLists; index as i">
+            <td>{{i + 1}}</td>
+            <td>{{user.fullname}}</td>
+            <td><button class="btn btn-success btn-sm" (click)="sendRequest(user.id)">Send Request</button></td>
+          </tr>
+        </ng-container>
+        <ng-template #elseBlock>
+          <tr>
+            <td colspan="7">
+              No data found
+            </td>
+          </tr>
+        </ng-template>
+      </tbody>
+    </table>
+  </div>
+</div>

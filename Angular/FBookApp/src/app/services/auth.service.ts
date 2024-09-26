@@ -33,7 +33,10 @@ export class AuthService {
     this.isLoggedIn = false;
     this.userName = "";
     this.apiUrl = environment.apiEndPoint;
+    console.log("called");
   }
+
+
 
   registerUser(payload: any) {
     return this.httpClient.post(this.apiUrl + "/users", payload).pipe(
@@ -57,7 +60,8 @@ export class AuthService {
 
   isUserLoggedIn(): boolean {
     let token = localStorage.getItem("accessToken");
-    return token != null && !this.jwtHelper.isTokenExpired(token);
+    let user = localStorage.getItem("user");
+    return token  != null && !this.jwtHelper.isTokenExpired(token) && user != null;
   }
   logout(): void {
     //this.isLoggedIn = false;

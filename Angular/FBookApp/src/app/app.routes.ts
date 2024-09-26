@@ -12,12 +12,13 @@ import { UsersComponent } from "./pages/users/users.component";
 import { MyProfileComponent } from "./pages/my-profile/my-profile.component";
 import { NetworkComponent } from "./pages/network/network.component";
 import { FriendsComponent } from "./pages/friends/friends.component";
+import { ManagePostsComponent } from "./pages/posts/manage-posts/manage-posts.component";
 
 export const routes: Routes = [
   {
     path: "",
     redirectTo: "login",
-    pathMatch: "full",    
+    pathMatch: "full",
   },
   {
     path: "home",
@@ -27,6 +28,11 @@ export const routes: Routes = [
   {
     path: "users",
     component: UsersComponent,
+    canActivate:[authGuard], data: {role: 'admin'}
+  },
+  {
+    path: "posts",
+    component: ManagePostsComponent,
     canActivate:[authGuard], data: {role: 'admin'}
   },
   {

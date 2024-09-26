@@ -1,31 +1,7 @@
-<div class="card mb-4">
+<div class="card mb-4" *ngFor="let post of postsList$ | async as posts">
+  <div class="card-header"><h5 class="card-title">{{post.submittedBy}}</h5></div>
   <div class="card-body">
-    <h5 class="card-title">User name</h5>
-    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis non justo id finibus. Nam sit amet leo at arcu blandit fermentum. Morbi sodales ante eu malesuada sollicitudin. Nullam a urna at eros bibendum consequat. Nam tortor turpis, finibus sit amet odio ultricies, rhoncus aliquet eros.</p>
-    <small class="text-muted ms-auto">Posted on September 2024</small>
+    <p class="card-text">{{post.comments}}</p>
   </div>
+  <div class="card-footer"><small class="text-muted ms-auto">Posted on {{post.submittedOn | date:'full'}}</small></div>
 </div>
-
-
-<div class="card mb-4">
-  <div class="card-body">
-    <h5 class="card-title">User name</h5>
-    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis non justo id finibus. Nam sit amet leo at arcu blandit fermentum. Morbi sodales ante eu malesuada sollicitudin. Nullam a urna at eros bibendum consequat. Nam tortor turpis, finibus sit amet odio ultricies, rhoncus aliquet eros.</p>
-    <small class="text-muted ms-auto">Posted on September 2024</small>
-  </div>
-</div>
-<div class="card mb-4">
-  <div class="card-body">
-    <h5 class="card-title">User name</h5>
-    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis non justo id finibus. Nam sit amet leo at arcu blandit fermentum. Morbi sodales ante eu malesuada sollicitudin. Nullam a urna at eros bibendum consequat. Nam tortor turpis, finibus sit amet odio ultricies, rhoncus aliquet eros.</p>
-    <small class="text-muted ms-auto">Posted on September 2024</small>
-  </div>
-</div>
-<div class="card mb-4">
-  <div class="card-body">
-    <h5 class="card-title">User name</h5>
-    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis non justo id finibus. Nam sit amet leo at arcu blandit fermentum. Morbi sodales ante eu malesuada sollicitudin. Nullam a urna at eros bibendum consequat. Nam tortor turpis, finibus sit amet odio ultricies, rhoncus aliquet eros.</p>
-    <small class="text-muted ms-auto">Posted on September 2024</small>
-  </div>
-</div>
-

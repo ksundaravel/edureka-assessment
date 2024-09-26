@@ -14,7 +14,20 @@
           <tr *ngFor="let user of userList$ | async as userLists; index as i">
             <td>{{i + 1}}</td>
             <td>{{user.fullname}}</td>
-            <td><button class="btn btn-success btn-sm" (click)="sendRequest(user.id)">Send Request</button></td>
+
+            <td>
+              <!-- @if(getStatus(loggedUser.id,user.id) ==='Pending' && loggedUser.id !== user.id){
+              <button class="btn btn-sm btn-warn">Pending Request</button>
+            }@else if(getStatus(loggedUser.id,user.id) ==='Pending' && loggedUser.id === user.id){
+              <button class="btn btn-success btn-sm">Approved</button>
+            }@else {
+              <button class="btn btn-primary btn-sm"
+                (click)="sendRequest(user.id)">Send Request</button>
+            } -->
+
+            <button class="btn btn-primary btn-sm"
+            (click)="sendRequest(user.id)">Send Request</button>
+            </td>
           </tr>
         </ng-container>
         <ng-template #elseBlock>

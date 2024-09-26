@@ -29,18 +29,29 @@ export class NetworkComponent implements OnInit {
     this.userList$ = this.userService.getOtherUsersList(this.loggedUser.id);
   }
 
-  sendRequest(requestTo: number | string){
+  sendRequest(requestTo: number | string) {
     const payload = {
       requestedBy: this.loggedUser.id,
       requestedTo: requestTo,
-      requestStatus: 'Pending',
+      requestStatus: "Pending",
       requestedOn: new Date(),
     };
 
     this.userService.sendFriendRequest(payload).subscribe((res) => {
-      if(res){
-       console.log("Successfully request")
+      if (res) {
+        console.log("Successfully request");
       }
     });
+  }
+
+  async getRequestStatus(
+    requestedBy: number | string,
+    requestedTo: number | string
+  ):Promise<any> {
+    return await this.userService.getFriendRequestStatus(requestedBy, requestedTo);
+  }
+
+  getStatus(requestedBy: number | string, requestedTo: number | string): any {
+    return this.getRequestStatus(requestedBy, requestedTo).then((res=> res))
   }
 }

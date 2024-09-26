@@ -85,4 +85,13 @@ export class UserService {
       catchError(this.errorService.handleError) // then handle the error
     );
   }
+
+  getFriendRequestStatus(requestedBy:any,requestedTo: any){
+    return this.httpClient.get<any[]>(this.apiUrl + "/friendsRequest").pipe(
+      map((requests)=>{
+        return requests.filter(request=> request.requestedBy === requestedBy || request.requestedTo === requestedTo)
+      }),
+      catchError(this.errorService.handleError) // then handle the error
+    );
+  }
 }

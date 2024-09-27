@@ -331,5 +331,36 @@
       "id": 10
     }
   ],
-  "friendsRequest": [ ]
+  "friendsRequest": [
+    {
+      "requestedBy": 2,
+      "requestedTo": 1,
+      "requestStatus": "Approved",
+      "requestedOn": "2024-09-27T01:08:21.000Z",
+      "id": 1,
+      "approvedOn": "2024-09-27T01:36:25.679Z"
+    },
+    {
+      "requestedBy": 2,
+      "requestedTo": 4,
+      "requestStatus": "Rejected",
+      "requestedOn": "2024-09-27T01:17:29.424Z",
+      "id": 2,
+      "approvedOn": "2024-09-27T01:38:08.880Z"
+    },
+    {
+      "requestedBy": 1,
+      "requestedTo": 4,
+      "requestStatus": "Pending",
+      "requestedOn": "2024-09-27T01:20:10.574Z",
+      "id": 3
+    },
+    {
+      "requestedBy": 2,
+      "requestedTo": 3,
+      "requestStatus": "Pending",
+      "requestedOn": "2024-09-27T01:38:26.560Z",
+      "id": 4
+    }
+  ]
 }

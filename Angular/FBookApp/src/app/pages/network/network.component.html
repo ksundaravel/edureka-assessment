@@ -15,16 +15,23 @@
             <td>{{i + 1}}</td>
             <td>{{user.userDetails.fullname}}</td>
 
-            <td>@if(user.requestedDetails?.requestStatus ==='Pending' && user.requestedDetails?.requestedTo === loggedUser.id){
-              <button class="btn btn-warning btn-sm  me-2">Approve Request</button>
-              <button class="btn btn-danger btn-sm">Reject Request</button>
-              }
-              @else if(user.requestedDetails?.requestStatus === 'Pending' && user.requestedDetails?.requestedBy === loggedUser.id){
-              <button class="btn btn-sm btn-info">Pending Request</button>
-              }@else if(!user.requestedDetails){
-              <button class="btn btn-primary btn-sm" (click)="sendRequest(user.userDetails.id)">Send Request</button>
-              }@else {
-              <span class="btn btn-success btn-sm">Friend</span>
+            <td>
+              @if(!user.requestedDetails){
+                <button class="btn btn-primary btn-sm" (click)="sendRequest(user.userDetails.id)">Send Request</button>
+              }@else{
+                @if(user.requestedDetails.requestStatus ==='Pending' && user.requestedDetails.requestedTo ===
+                loggedUser.id){
+                  <button class="btn btn-warning btn-sm  me-2" (click)="updateRequest(user.requestedDetails.id,'Approved')">Approve Request</button>
+                  <button class="btn btn-danger btn-sm" (click)="updateRequest(user.requestedDetails.id,'Rejected')">Reject Request</button>
+                }
+                @else if(user.requestedDetails.requestStatus === 'Pending' && user.requestedDetails.requestedBy ===
+                loggedUser.id){
+                  <button class="btn btn-sm btn-info">Pending Request</button>
+                }@else if(user.requestedDetails.requestStatus === 'Rejected'){
+                  <span>Friend Request Denied</span>
+                }@else {
+                  <span>Allready in friends list</span>
+                }
               }
             </td>
           </tr>

@@ -26,9 +26,9 @@ export class NetworkComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userList$ = this.userService.getOtherUsersListmerge(this.loggedUser.id);
+    this.userList$ = this.userService.getOtherUsersListWithRequest(this.loggedUser.id);
 
-    this.userService.getOtherUsersListmerge(this.loggedUser.id).subscribe(res=>
+    this.userService.getOtherUsersListWithRequest(this.loggedUser.id).subscribe(res=>
     {
       console.log(res);
     }
@@ -45,11 +45,27 @@ export class NetworkComponent implements OnInit {
 
     this.userService.sendFriendRequest(payload).subscribe((res) => {
       if (res) {
-        this.userList$ = this.userService.getOtherUsersListmerge(this.loggedUser.id);
+        this.userList$ = this.userService.getOtherUsersListWithRequest(this.loggedUser.id);
         console.log("Successfully request");
       }
     });
   }
+
+  updateRequest(requestId: number | string, status: string){
+    const payload = {
+      id:requestId,
+      requestStatus: status,
+      approvedOn: new Date()
+    };
+
+    this.userService.updateFriendRequest(payload).subscribe((res) => {
+      if (res) {
+        this.userList$ = this.userService.getOtherUsersListWithRequest(this.loggedUser.id);
+        console.log("Successfully updated");
+      }
+    });
+  }
+
 
   // async getRequestStatus(
   //   requestedBy: number | string,

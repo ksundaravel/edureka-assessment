@@ -35,27 +35,27 @@ export class UserService {
     );
   }
 
-  getOtherUsersList(id: number | string): Observable<IUser[]> {
-    return this.httpClient.get<IUser[]>(this.apiUrl + "/users").pipe(
-      retry(3), // retry a failed request up to 3 times
-      map((users: IUser[]) => {
-        return users.filter((user) => user.id !== id);
-      }),
-      catchError(this.errorService.handleError) // then handle the error
-    );
-  }
+  // getOtherUsersList(id: number | string): Observable<IUser[]> {
+  //   return this.httpClient.get<IUser[]>(this.apiUrl + "/users").pipe(
+  //     retry(3), // retry a failed request up to 3 times
+  //     map((users: IUser[]) => {
+  //       return users.filter((user) => user.id !== id);
+  //     }),
+  //     catchError(this.errorService.handleError) // then handle the error
+  //   );
+  // }
 
-  getRequestUsersList(id: number | string): Observable<IUser[]> {
-    return this.httpClient.get<any>(this.apiUrl + "/friendsRequest").pipe(
-      retry(3), // retry a failed request up to 3 times
-      map((users: any[]) => {
-        return users.filter((user) => user.requestedBy !== id);
-      }),
-      catchError(this.errorService.handleError) // then handle the error
-    );
-  }
+  // getRequestUsersList(id: number | string): Observable<IUser[]> {
+  //   return this.httpClient.get<any>(this.apiUrl + "/friendsRequest").pipe(
+  //     retry(3), // retry a failed request up to 3 times
+  //     map((users: any[]) => {
+  //       return users.filter((user) => user.requestedBy !== id);
+  //     }),
+  //     catchError(this.errorService.handleError) // then handle the error
+  //   );
+  // }
 
-  getOtherUsersListmerge(id: number | string): Observable<IUserWithRequest[]> {
+  getOtherUsersListWithRequest(id: number | string): Observable<IUserWithRequest[]> {
     const users$ = this.httpClient.get<IUser[]>(this.apiUrl + "/users");
     const request$ = this.httpClient.get<any[]>(
       this.apiUrl + "/friendsRequest"
@@ -66,7 +66,7 @@ export class UserService {
         const filteredUsers = users.filter((user) => user.id !== id);
         return filteredUsers.map((user) => {
           const requestDetails = request.find(
-            (req) => req.requestedBy === id || req.requestedTo === id
+            (req) => (req.requestedTo === user.id && req.requestedBy === id) || (req.requestedBy === user.id && req.requestedTo === id)
           );
           return {
             userDetails: user,
@@ -105,16 +105,8 @@ export class UserService {
     );
   }
 
-  getFriendRequestStatus(requestedBy: any, requestedTo: any) {
-    return this.httpClient.get<any[]>(this.apiUrl + "/friendsRequest").pipe(
-      map((requests) => {
-        return requests.filter(
-          (request) =>
-            request.requestedBy === requestedBy ||
-            request.requestedTo === requestedTo
-        );
-      }),
-      catchError(this.errorService.handleError) // then handle the error
-    );
+  updateFriendRequest(payload: any){
+    return this.httpClient.patch(`${this.apiUrl}/friendsRequest/${payload.id}`, payload);
   }
+
 }

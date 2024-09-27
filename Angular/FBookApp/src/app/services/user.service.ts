@@ -1,62 +1,81 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
-import { catchError, map, Observable, retry, throwError } from 'rxjs';
-import { environment } from '../../environments/environment';
-import { IUser } from '../models/iuser';
-import { ErrorsService } from './errors.service';
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { inject, Injectable } from "@angular/core";
+import { catchError, forkJoin, map, Observable, retry, throwError } from "rxjs";
+import { environment } from "../../environments/environment";
+import { IUser, IUserWithRequest } from "../models/iuser";
+import { ErrorsService } from "./errors.service";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class UserService {
-  apiUrl:string = "";
+  apiUrl: string = "";
   errorService = inject(ErrorsService);
   //apiUrl:string = "https://dummy.restapiexample.com/api/v1"
   constructor(private httpClient: HttpClient) {
     this.apiUrl = environment.apiEndPoint;
   }
 
-  getAllUsers():Observable<IUser[]> {
-    return this.httpClient.get<IUser[]>(this.apiUrl+"/users").pipe(
+  getAllUsers(): Observable<IUser[]> {
+    return this.httpClient.get<IUser[]>(this.apiUrl + "/users").pipe(
       retry(3), // retry a failed request up to 3 times
       catchError(this.errorService.handleError) // then handle the error
-    )
+    );
   }
 
-  getLoggedInUser(){
+  getLoggedInUser() {
     const userSession = localStorage.getItem("user");
-    return userSession? JSON.parse(userSession):null;
+    return userSession ? JSON.parse(userSession) : null;
   }
 
-  getUserById(id:string | number):Observable<IUser> {
-    return this.httpClient.get<IUser>(this.apiUrl+"/users/"+id).pipe(
+  getUserById(id: string | number): Observable<IUser> {
+    return this.httpClient.get<IUser>(this.apiUrl + "/users/" + id).pipe(
       retry(3), // retry a failed request up to 3 times
       catchError(this.errorService.handleError) // then handle the error
-    )
+    );
   }
 
-  getOtherUsersList(id: number | string):Observable<IUser[]> {
-    return this.httpClient.get<IUser[]>(this.apiUrl+"/users").pipe(
+  getOtherUsersList(id: number | string): Observable<IUser[]> {
+    return this.httpClient.get<IUser[]>(this.apiUrl + "/users").pipe(
       retry(3), // retry a failed request up to 3 times
-      map((users:IUser[])=>{
-        return users.filter(user=> user.id !== id)
+      map((users: IUser[]) => {
+        return users.filter((user) => user.id !== id);
       }),
       catchError(this.errorService.handleError) // then handle the error
-    )
+    );
   }
 
-  getRequestUsersList(id: number | string):Observable<IUser[]> {
-    return this.httpClient.get<any>(this.apiUrl+"/friendsRequest").pipe(
+  getRequestUsersList(id: number | string): Observable<IUser[]> {
+    return this.httpClient.get<any>(this.apiUrl + "/friendsRequest").pipe(
       retry(3), // retry a failed request up to 3 times
-      map((users:any[])=>{
-        return users.filter(user=> user.requestedBy !== id)
+      map((users: any[]) => {
+        return users.filter((user) => user.requestedBy !== id);
       }),
       catchError(this.errorService.handleError) // then handle the error
-    )
+    );
   }
 
+  getOtherUsersListmerge(id: number | string): Observable<IUserWithRequest[]> {
+    const users$ = this.httpClient.get<IUser[]>(this.apiUrl + "/users");
+    const request$ = this.httpClient.get<any[]>(
+      this.apiUrl + "/friendsRequest"
+    );
 
-
+    return forkJoin([users$, request$]).pipe(
+      map(([users, request]) => {
+        const filteredUsers = users.filter((user) => user.id !== id);
+        return filteredUsers.map((user) => {
+          const requestDetails = request.find(
+            (req) => req.requestedBy === id || req.requestedTo === id
+          );
+          return {
+            userDetails: user,
+            requestedDetails: (requestDetails)?requestDetails:null,
+          };
+        });
+      })
+    );
+  }
 
   // getOtherUsersList(id: number | string):Observable<any> {
   //   return this.httpClient.get<IUser[]>(this.apiUrl+"/users").pipe(
@@ -86,10 +105,14 @@ export class UserService {
     );
   }
 
-  getFriendRequestStatus(requestedBy:any,requestedTo: any){
+  getFriendRequestStatus(requestedBy: any, requestedTo: any) {
     return this.httpClient.get<any[]>(this.apiUrl + "/friendsRequest").pipe(
-      map((requests)=>{
-        return requests.filter(request=> request.requestedBy === requestedBy || request.requestedTo === requestedTo)
+      map((requests) => {
+        return requests.filter(
+          (request) =>
+            request.requestedBy === requestedBy ||
+            request.requestedTo === requestedTo
+        );
       }),
       catchError(this.errorService.handleError) // then handle the error
     );

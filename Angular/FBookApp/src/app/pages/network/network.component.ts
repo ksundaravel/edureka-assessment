@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from "@angular/core";
 import { MyPostsComponent } from "../posts/my-posts/my-posts.component";
 import { CommonModule } from "@angular/common";
 import { Observable, of } from "rxjs";
-import { IUser, IUserLoggedIn } from "../../models/iuser";
+import { IUser, IUserLoggedIn, IUserWithRequest } from "../../models/iuser";
 import { UserService } from "../../services/user.service";
 import { AuthService } from "../../services/auth.service";
 
@@ -15,7 +15,7 @@ import { AuthService } from "../../services/auth.service";
 })
 export class NetworkComponent implements OnInit {
   loggedUser!: IUserLoggedIn;
-  userList$: Observable<IUser[]> = of([]);
+  userList$: Observable<IUserWithRequest[]> = of([]);
   authService = inject(AuthService);
   constructor(private userService: UserService) {
     this.authService.getRole().subscribe((res) => {
@@ -26,7 +26,13 @@ export class NetworkComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userList$ = this.userService.getOtherUsersList(this.loggedUser.id);
+    this.userList$ = this.userService.getOtherUsersListmerge(this.loggedUser.id);
+
+    this.userService.getOtherUsersListmerge(this.loggedUser.id).subscribe(res=>
+    {
+      console.log(res);
+    }
+    )
   }
 
   sendRequest(requestTo: number | string) {
@@ -39,19 +45,20 @@ export class NetworkComponent implements OnInit {
 
     this.userService.sendFriendRequest(payload).subscribe((res) => {
       if (res) {
+        this.userList$ = this.userService.getOtherUsersListmerge(this.loggedUser.id);
         console.log("Successfully request");
       }
     });
   }
 
-  async getRequestStatus(
-    requestedBy: number | string,
-    requestedTo: number | string
-  ):Promise<any> {
-    return await this.userService.getFriendRequestStatus(requestedBy, requestedTo);
-  }
+  // async getRequestStatus(
+  //   requestedBy: number | string,
+  //   requestedTo: number | string
+  // ):Promise<any> {
+  //   return await this.userService.getFriendRequestStatus(requestedBy, requestedTo);
+  // }
 
-  getStatus(requestedBy: number | string, requestedTo: number | string): any {
-    return this.getRequestStatus(requestedBy, requestedTo).then((res=> res))
-  }
+  // getStatus(requestedBy: number | string, requestedTo: number | string): any {
+  //   return this.getRequestStatus(requestedBy, requestedTo).then((res=> res))
+  // }
 }

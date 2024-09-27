@@ -13,20 +13,19 @@
         <ng-container *ngIf="userList$ | async as userLists; else elseBlock">
           <tr *ngFor="let user of userList$ | async as userLists; index as i">
             <td>{{i + 1}}</td>
-            <td>{{user.fullname}}</td>
+            <td>{{user.userDetails.fullname}}</td>
 
-            <td>
-              <!-- @if(getStatus(loggedUser.id,user.id) ==='Pending' && loggedUser.id !== user.id){
-              <button class="btn btn-sm btn-warn">Pending Request</button>
-            }@else if(getStatus(loggedUser.id,user.id) ==='Pending' && loggedUser.id === user.id){
-              <button class="btn btn-success btn-sm">Approved</button>
-            }@else {
-              <button class="btn btn-primary btn-sm"
-                (click)="sendRequest(user.id)">Send Request</button>
-            } -->
-
-            <button class="btn btn-primary btn-sm"
-            (click)="sendRequest(user.id)">Send Request</button>
+            <td>@if(user.requestedDetails?.requestStatus ==='Pending' && user.requestedDetails?.requestedTo === loggedUser.id){
+              <button class="btn btn-warning btn-sm  me-2">Approve Request</button>
+              <button class="btn btn-danger btn-sm">Reject Request</button>
+              }
+              @else if(user.requestedDetails?.requestStatus === 'Pending' && user.requestedDetails?.requestedBy === loggedUser.id){
+              <button class="btn btn-sm btn-info">Pending Request</button>
+              }@else if(!user.requestedDetails){
+              <button class="btn btn-primary btn-sm" (click)="sendRequest(user.userDetails.id)">Send Request</button>
+              }@else {
+              <span class="btn btn-success btn-sm">Friend</span>
+              }
             </td>
           </tr>
         </ng-container>

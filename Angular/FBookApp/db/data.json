@@ -331,27 +331,5 @@
       "id": 10
     }
   ],
-  "friendsRequest": [
-    {
-      "requestedBy": 3,
-      "requestedTo": 4,
-      "requestStatus": "Pending",
-      "requestedOn": "2024-09-26T01:56:43.666Z",
-      "id": 1
-    },
-    {
-      "requestedBy": 2,
-      "requestedTo": 3,
-      "requestStatus": "Pending",
-      "requestedOn": "2024-09-26T03:39:11.115Z",
-      "id": 2
-    },
-    {
-      "requestedBy": 2,
-      "requestedTo": 4,
-      "requestStatus": "Pending",
-      "requestedOn": "2024-09-26T03:39:11.899Z",
-      "id": 3
-    }
-  ]
+  "friendsRequest": [ ]
 }

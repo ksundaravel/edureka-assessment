@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from "@angular/core";
+import { Component, EventEmitter, inject, OnInit, Output } from "@angular/core";
 import { MyPostsComponent } from "../posts/my-posts/my-posts.component";
 import { CommonModule } from "@angular/common";
 import { Observable, of } from "rxjs";
@@ -17,6 +17,10 @@ export class NetworkComponent implements OnInit {
   loggedUser!: IUserLoggedIn;
   userList$: Observable<IUserWithRequest[]> = of([]);
   authService = inject(AuthService);
+  myApproveCount: number = 0;
+
+  @Output() dataSubmitted = new EventEmitter<void>();
+
   constructor(private userService: UserService) {
     this.authService.getRole().subscribe((res) => {
       if (res.role) {
@@ -26,13 +30,9 @@ export class NetworkComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userList$ = this.userService.getOtherUsersListWithRequest(this.loggedUser.id);
-
-    this.userService.getOtherUsersListWithRequest(this.loggedUser.id).subscribe(res=>
-    {
-      console.log(res);
-    }
-    )
+    this.userList$ = this.userService.getOtherUsersListWithRequest(
+      this.loggedUser.id
+    );
   }
 
   sendRequest(requestTo: number | string) {
@@ -45,22 +45,28 @@ export class NetworkComponent implements OnInit {
 
     this.userService.sendFriendRequest(payload).subscribe((res) => {
       if (res) {
-        this.userList$ = this.userService.getOtherUsersListWithRequest(this.loggedUser.id);
+        this.userList$ = this.userService.getOtherUsersListWithRequest(
+          this.loggedUser.id
+        );
+        this.dataSubmitted.emit();
         console.log("Successfully request");
       }
     });
   }
 
-  updateRequest(requestId: number | string, status: string){
+  updateRequest(requestId: number | string, status: string) {
     const payload = {
-      id:requestId,
+      id: requestId,
       requestStatus: status,
-      approvedOn: new Date()
+      approvedOn: new Date(),
     };
 
     this.userService.updateFriendRequest(payload).subscribe((res) => {
       if (res) {
-        this.userList$ = this.userService.getOtherUsersListWithRequest(this.loggedUser.id);
+        this.userList$ = this.userService.getOtherUsersListWithRequest(
+          this.loggedUser.id
+        );
+        this.dataSubmitted.emit();
         console.log("Successfully updated");
       }
     });

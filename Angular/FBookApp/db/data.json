@@ -358,9 +358,10 @@
     {
       "requestedBy": 2,
       "requestedTo": 3,
-      "requestStatus": "Pending",
+      "requestStatus": "Approved",
       "requestedOn": "2024-09-27T01:38:26.560Z",
-      "id": 4
+      "id": 4,
+      "approvedOn": "2024-09-27T02:52:43.534Z"
     }
   ]
 }

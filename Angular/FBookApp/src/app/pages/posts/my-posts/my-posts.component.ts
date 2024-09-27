@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { PostsService } from '../../../services/posts.service';
 import { Observable } from 'rxjs';
 import { IPosts } from '../../../models/iposts';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-my-posts',
@@ -17,7 +18,9 @@ export class MyPostsComponent implements OnInit {
   loggedUser!: IUserLoggedIn;
   authService = inject(AuthService);
   postService = inject(PostsService);
+  userService = inject(UserService);
   myPostCount: number = 0;
+  myApproveCount: number = 0;
   postsList$!: Observable<IPosts[]>;
   constructor(){
     this.authService.getRole().subscribe((res) => {
@@ -29,11 +32,18 @@ export class MyPostsComponent implements OnInit {
 
   ngOnInit(){
     this.getMyPosts();
+    this.getMyApprovedFriends();
   }
 
   getMyPosts(){
     this.postService.getAllPostsById(this.loggedUser.id).subscribe(res =>{
       this.myPostCount = res.length;
+    });
+  }
+
+  getMyApprovedFriends() {
+    this.userService.getApprovedFriendsRequest(this.loggedUser.id).subscribe(res=>{
+      this.myApproveCount = res.length;
     });
   }
 }

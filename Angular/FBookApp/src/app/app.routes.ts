@@ -72,12 +72,12 @@ export const routes: Routes = [
   {
     path: "network",
     component: NetworkComponent,
-    canActivate:[authGuard], data: {role: ['user']}
+    canActivate:[authGuard], data: {role: ['admin','user']}
   },
   {
     path: "friends",
     component: FriendsComponent,
-    canActivate:[authGuard], data: {role: ['user']}
+    canActivate:[authGuard], data: {role: ['admin','user']}
   },
   {
     path: "**",

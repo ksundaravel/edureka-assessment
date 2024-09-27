@@ -4,6 +4,7 @@ import { ExistingPostsComponent } from "../posts/existing-posts/existing-posts.c
 import { MyPostsComponent } from "../posts/my-posts/my-posts.component";
 import { AuthService } from "../../services/auth.service";
 import { IUserLoggedIn } from "../../models/iuser";
+import { NetworkComponent } from "../network/network.component";
 
 @Component({
   selector: "app-home",
@@ -34,5 +35,6 @@ export class HomeComponent {
   onDataSubmitted() {
     this.existingPostsComponent.getAllPosts();
     this.myPostsComponent.getMyPosts();
+    this.myPostsComponent.getMyApprovedFriends();
   }
 }

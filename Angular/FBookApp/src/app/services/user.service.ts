@@ -55,7 +55,9 @@ export class UserService {
   //   );
   // }
 
-  getOtherUsersListWithRequest(id: number | string): Observable<IUserWithRequest[]> {
+  getOtherUsersListWithRequest(
+    id: number | string
+  ): Observable<IUserWithRequest[]> {
     const users$ = this.httpClient.get<IUser[]>(this.apiUrl + "/users");
     const request$ = this.httpClient.get<any[]>(
       this.apiUrl + "/friendsRequest"
@@ -66,15 +68,39 @@ export class UserService {
         const filteredUsers = users.filter((user) => user.id !== id);
         return filteredUsers.map((user) => {
           const requestDetails = request.find(
-            (req) => (req.requestedTo === user.id && req.requestedBy === id) || (req.requestedBy === user.id && req.requestedTo === id)
+            (req) =>
+              (req.requestedTo === user.id && req.requestedBy === id) ||
+              (req.requestedBy === user.id && req.requestedTo === id)
           );
           return {
             userDetails: user,
-            requestedDetails: (requestDetails)?requestDetails:null,
+            requestedDetails: requestDetails ? requestDetails : null,
           };
         });
       })
     );
+  }
+
+  getApprovedFriendsRequest(id: number | string) {
+    console.log("called");
+    return this.httpClient
+      .get<any[]>(this.apiUrl + "/friendsRequest")
+      .pipe(
+        map((lists) =>
+          lists.filter(
+            (res) =>
+              (res.requestedTo === id || res.requestedBy === id) &&
+              res.requestStatus === "Approved"
+          )
+        )
+      );
+  }
+
+  async getApprovedUsersRequest(id: number | string): Promise<Observable<IUserWithRequest[]>> {
+    const mergedUsers$ = this.getOtherUsersListWithRequest(id);
+    return mergedUsers$.pipe(map(mergedUsers => {
+       return mergedUsers.filter((user) => user.userDetails !== null && user.requestedDetails?.requestStatus === "Approved");
+    }))
   }
 
   // getOtherUsersList(id: number | string):Observable<any> {
@@ -105,8 +131,10 @@ export class UserService {
     );
   }
 
-  updateFriendRequest(payload: any){
-    return this.httpClient.patch(`${this.apiUrl}/friendsRequest/${payload.id}`, payload);
+  updateFriendRequest(payload: any) {
+    return this.httpClient.patch(
+      `${this.apiUrl}/friendsRequest/${payload.id}`,
+      payload
+    );
   }
-
 }

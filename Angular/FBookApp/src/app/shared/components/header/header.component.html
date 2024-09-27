@@ -21,7 +21,7 @@
               <a class="nav-link" routerLink="posts">Posts</a>
             </li>
             }
-            @if(loggedUser?.role === roles.USER) {
+            @if(loggedUser?.role === roles.USER || loggedUser?.role === roles.ADMIN) {
             <li class="nav-item" routerLinkActive="active">
               <a class="nav-link" routerLink="network">Network</a>
             </li>

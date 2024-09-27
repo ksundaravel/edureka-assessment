@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-4"><app-my-posts /></div>
   <div class="col-md-8 mt-4">
-    <table class="table table-bordered">
+    <table *ngIf="userData" class="table table-bordered">
       <tbody>
         <tr>
           <th [width]="'25%'">Full Name:</th>
@@ -12,7 +12,7 @@
           <td>{{userData.dob}}</td>
         </tr>
         <tr>
-          <th [width]="'25%'">city:</th>
+          <th [width]="'25%'">City:</th>
           <td>{{userData.city}}</td>
         </tr>
         <tr>
@@ -31,7 +31,21 @@
           <th [width]="'25%'">Status:</th>
           <td>{{userData.status}}</td>
         </tr>
+        <tr>
+          <th colspan="2"><a (click)="onShowPasswordForm()" class="btn btn-sm btn-primary">Change Password</a></th>
+        </tr>
       </tbody>
     </table>
+
+    <ng-container *ngIf="showPasswordFields">
+      <h2 class="pt-4 pb-4">Change Password</h2>
+      <div class="alert alert-success" role="alert" *ngIf="msg != ''">
+        {{msg}}
+      </div>
+      <div class="alert alert-danger" role="alert" *ngIf="errorMsg != ''">
+        {{errorMsg}}
+      </div>
+      <app-change-password (actionFn)="onChangeFn($event)" [selectedUser]='loggedUser.id'/>
+    </ng-container>
   </div>
 </div>

@@ -27,7 +27,7 @@ export class AuthService {
   jwtHelper = new JwtHelperService();
   httpClient = inject(HttpClient);
   userService = inject(UserService);
-  private roleSubject = new BehaviorSubject<IUserLoggedIn>({fullname: 'Guest',role:'',id:''});
+  private roleSubject = new BehaviorSubject<IUserLoggedIn>({fullname: 'Guest',role:'',id:0});
 
   constructor(private router: Router) {
     this.isLoggedIn = false;
@@ -65,7 +65,7 @@ export class AuthService {
   }
   logout(): void {
     //this.isLoggedIn = false;
-    this.roleSubject.next({fullname: 'Guest',role:'',id:''});
+    this.roleSubject.next({fullname: 'Guest',role:'',id:0});
     localStorage.clear();
     this.router.navigate(["login"]);
   }
@@ -87,7 +87,7 @@ export class AuthService {
   }
 
   changePassword(payload: any) {
-    return this.httpClient.put(`${this.apiUrl}/users/${payload.id}`, payload);
+    return this.httpClient.patch(`${this.apiUrl}/users/${payload.id}`, payload);
   }
 
   private decodeToken(token: string): any {

@@ -14,7 +14,7 @@
     },
     {
       "email": "nilson@email.com",
-      "password": "$2a$10$QOJDTmiO0MZ5F8QRlLaHOuqVX51IVXSgyzc7ku/TdCSHzYq4XKh0q",
+      "password": "$2a$10$Orf8jC8Ba1FUkA86OuAgyOmgRPCOBAfmRU0.gxvbxbaKT.zM.8u9y",
       "fullname": "Nilson",
       "dob": "2024-01-01",
       "address": "Iyyanar Palayam, S N Mangalam",
@@ -329,6 +329,13 @@
       "submittedId": 3,
       "submittedOn": "2024-09-26T01:39:53.883Z",
       "id": 10
+    },
+    {
+      "comments": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis non justo id finibus. Nam sit amet leo at arcu blandit fermentum.",
+      "submittedBy": "Nilson",
+      "submittedId": 2,
+      "submittedOn": "2024-09-27T04:14:34.972Z",
+      "id": 11
     }
   ],
   "friendsRequest": [
@@ -351,9 +358,10 @@
     {
       "requestedBy": 1,
       "requestedTo": 4,
-      "requestStatus": "Pending",
+      "requestStatus": "Approved",
       "requestedOn": "2024-09-27T01:20:10.574Z",
-      "id": 3
+      "id": 3,
+      "approvedOn": "2024-09-27T03:29:05.314Z"
     },
     {
       "requestedBy": 2,

@@ -25,8 +25,9 @@ export class ForgotPasswordComponent {
   passwordChangeForm: FormGroup;
   showPasswordFields: boolean = false;
   passwordChangeCompleted = false;
-  selectedUserForgotPassword: IUser | null = null;
+  selectedUserForgotPassword: number = 0;
   authService = inject(AuthService);
+
   constructor() {
     this.msg = "";
     this.errorMsg = "";
@@ -44,12 +45,14 @@ export class ForgotPasswordComponent {
   }
 
   onSubmitFn() {
+
     this.authService
       .forgotPassword(this.forgotPasswordForm.value)
       .then((res) => {
         if (res) {
+          console.log(res);
           this.errorMsg = "";
-          this.selectedUserForgotPassword = {...res};
+          this.selectedUserForgotPassword = res.id;
           this.showPasswordFields = true;
         } else {
           this.errorMsg = "User not fount!!";
@@ -60,7 +63,7 @@ export class ForgotPasswordComponent {
   }
   onChangeFn(value: boolean) {
     if(value) {
-      this.selectedUserForgotPassword= null;
+      this.selectedUserForgotPassword = 0;
       this.msg = "Password change successully completed!!!";
       this.errorMsg = "";
       this.passwordChangeCompleted = true;
@@ -69,30 +72,5 @@ export class ForgotPasswordComponent {
       this.errorMsg = "Password change failed!!!";
       this.msg = "";
     }
-
-    // const { password } = this.passwordChangeForm.value;
-    // const payload = {...this.selectedUserForgotPassword,password };
-    // console.log(payload);
-    // this.authService.changePassword(payload).subscribe({
-    //   next: (res) => {
-    //     if(res){
-    //       this.selectedUserForgotPassword= null;
-    //       this.msg = "Password change successully completed!!!";
-    //       this.errorMsg = "";
-    //       this.passwordChangeCompleted = true;
-    //       this.passwordChangeForm.reset();
-    //     }else{
-    //       console.log("No response");
-    //     }
-    //   },
-    //   error: (e) => {
-    //     this.errorMsg = "Password change failed!!!";
-    //     this.msg = "";
-    //     console.log(e);
-    //   },
-    //   complete: () => {
-    //     console.log("Password change completed");
-    //   },
-    // });
   }
 }

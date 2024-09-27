@@ -30,7 +30,7 @@ export class NetworkComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userList$ = this.userService.getOtherUsersListWithRequest(
+    this.userList$ = this.userService.getNotApprovedUserList(
       this.loggedUser.id
     );
   }
@@ -45,7 +45,7 @@ export class NetworkComponent implements OnInit {
 
     this.userService.sendFriendRequest(payload).subscribe((res) => {
       if (res) {
-        this.userList$ = this.userService.getOtherUsersListWithRequest(
+        this.userList$ = this.userService.getNotApprovedUserList(
           this.loggedUser.id
         );
         this.dataSubmitted.emit();
@@ -63,7 +63,7 @@ export class NetworkComponent implements OnInit {
 
     this.userService.updateFriendRequest(payload).subscribe((res) => {
       if (res) {
-        this.userList$ = this.userService.getOtherUsersListWithRequest(
+        this.userList$ = this.userService.getNotApprovedUserList(
           this.loggedUser.id
         );
         this.dataSubmitted.emit();

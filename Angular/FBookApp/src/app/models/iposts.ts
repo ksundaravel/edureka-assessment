@@ -1,5 +1,5 @@
 export interface IPosts {
-  id: string | number,
+  id: number,
   submittedBy: string,
   submittedId: string,
   submittedOn: string

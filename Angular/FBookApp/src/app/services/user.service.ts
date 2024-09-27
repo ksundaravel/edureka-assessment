@@ -28,7 +28,7 @@ export class UserService {
     return userSession ? JSON.parse(userSession) : null;
   }
 
-  getUserById(id: string | number): Observable<IUser> {
+  getUserById(id: number): Observable<IUser> {
     return this.httpClient.get<IUser>(this.apiUrl + "/users/" + id).pipe(
       retry(3), // retry a failed request up to 3 times
       catchError(this.errorService.handleError) // then handle the error
@@ -55,9 +55,11 @@ export class UserService {
   //   );
   // }
 
+
   getOtherUsersListWithRequest(
     id: number | string
   ): Observable<IUserWithRequest[]> {
+
     const users$ = this.httpClient.get<IUser[]>(this.apiUrl + "/users");
     const request$ = this.httpClient.get<any[]>(
       this.apiUrl + "/friendsRequest"
@@ -77,6 +79,34 @@ export class UserService {
             requestedDetails: requestDetails ? requestDetails : null,
           };
         });
+      })
+    );
+  }
+
+  getNotApprovedUserList(
+    id: number | string
+  ): Observable<IUserWithRequest[]> {
+    const users$ = this.httpClient.get<IUser[]>(this.apiUrl + "/users");
+    const request$ = this.httpClient.get<any[]>(
+      this.apiUrl + "/friendsRequest"
+    );
+
+    return forkJoin([users$, request$]).pipe(
+      map(([users, request]) => {
+        const filteredUsers = users.filter((user) => user.id !== id);
+        const mergedUsers = filteredUsers.map((user) => {
+          const requestDetails = request.find(
+            (req) =>
+              (req.requestedTo === user.id && req.requestedBy === id) ||
+              (req.requestedBy === user.id && req.requestedTo === id)
+          );
+          return {
+            userDetails: user,
+            requestedDetails: requestDetails ? requestDetails : null,
+          };
+        });
+
+        return mergedUsers.filter((user) => user.userDetails === null || user.requestedDetails?.requestStatus !== "Approved");
       })
     );
   }

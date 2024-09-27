@@ -8,20 +8,20 @@ export interface IUser {
   phoneno: string;
   role: "admin" | "user";
   status: string;
-  id: string | number;
+  id: number;
 }
 
 export interface IUserLoggedIn {
   fullname: string;
   role: "";
-  id: string | number;
+  id: number;
 }
 
 export interface IUserRequest {
-  id: string | number,
+  id: number,
   requestStatus: string,
-  requestedBy: string | number,
-  requestedTo: string | number,
+  requestedBy: number,
+  requestedTo: number,
   requestedOn: Date
 }
 

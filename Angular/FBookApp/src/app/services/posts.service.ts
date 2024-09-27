@@ -34,10 +34,10 @@ export class PostsService {
     )
   }
 
-  getAllPostsById(id: string | number):Observable<IPosts[]> {
+  getAllPostsById(id: number):Observable<IPosts[]> {
     return this.httpClient.get<IPosts[]>(this.apiUrl+"/posts").pipe(
       map((posts)=>{
-        return posts.filter(post=> post.submittedId === id)
+        return posts.filter(post=> +post.submittedId === id)
       }),
       catchError(this.errorService.handleError) // then handle the error
     )
